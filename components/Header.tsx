@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 interface HeaderProps {
   isScrolled: boolean;
@@ -14,17 +15,17 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
   };
 
   const menuItems = [
-    { label: 'Tools', href: '#' },
-    { label: 'AI Tools', href: '#' },
-    { label: 'Category', href: '#' },
-    { label: 'Blog', href: '#' },
-    { label: 'About Us', href: '#' },
+    { label: 'Tools', href: '/tools' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'AI Tools', href: '/ai-tools' },
+    { label: 'Category', href: '/category' },
+    { label: 'About Us', href: '/about' },
   ];
 
   return (
     <header className={`absolute top-0 left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'bg-white/90 backdrop-blur-md py-4 shadow-sm' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <div className="flex items-center gap-2 group cursor-pointer">
+        <Link href="/" className="flex items-center gap-2 group cursor-pointer">
           <div className="grid grid-cols-2 gap-0.5 group-hover:rotate-180 transition-transform duration-700">
             <div className="w-3 h-3 rounded-full bg-blue-600"></div>
             <div className="w-3 h-3 rounded-full bg-blue-200"></div>
@@ -32,26 +33,26 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
             <div className="w-3 h-3 rounded-full bg-blue-600"></div>
           </div>
           <span className="text-2xl font-bold tracking-tight text-slate-900">Bitviron</span>
-        </div>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-10">
           {menuItems.map((item) => (
-            <a
+            <Link
               key={item.label}
               href={item.href}
               className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors relative group"
             >
               {item.label}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
-            </a>
+            </Link>
           ))}
         </nav>
 
         <div className="hidden lg:flex items-center gap-4">
-          <button className="text-sm font-bold text-slate-900 border-2 border-slate-900/10 px-6 py-2.5 rounded-full hover:bg-slate-50 transition-all active:scale-95">
+          <Link href="/contact" className="text-sm font-bold text-slate-900 border-2 border-slate-900/10 px-6 py-2.5 rounded-full hover:bg-slate-50 transition-all active:scale-95">
             Contact
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button - Morphing Hamburger */}
@@ -76,7 +77,7 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
         <div className="relative h-full flex flex-col px-8 pt-32 pb-12">
           <nav className="flex flex-col gap-8">
             {menuItems.map((item, index) => (
-              <a
+              <Link
                 key={item.label}
                 href={item.href}
                 className={`text-4xl font-black text-slate-900 tracking-tighter hover:text-blue-600 transition-all transform duration-500 ${isMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'}`}
@@ -84,14 +85,14 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}.
-              </a>
+              </Link>
             ))}
           </nav>
 
           <div className={`mt-auto space-y-4 transform transition-all duration-700 delay-500 ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-            <button className="w-full bg-slate-900 text-white font-bold py-5 rounded-2xl shadow-xl shadow-slate-200 hover:bg-slate-800 transition-colors">
+            <Link href="/contact" className="block w-full text-center bg-slate-900 text-white font-bold py-5 rounded-2xl shadow-xl shadow-slate-200 hover:bg-slate-800 transition-colors" onClick={() => setIsMenuOpen(false)}>
               Contact
-            </button>
+            </Link>
           </div>
 
           {/* Subtle decoration in mobile menu */}

@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 
 const Footer: React.FC = () => {
   return (
@@ -25,20 +26,20 @@ const Footer: React.FC = () => {
           <div>
             <h5 className="font-bold text-slate-900 mb-6 uppercase tracking-widest text-xs">Product</h5>
             <ul className="space-y-4 text-sm text-slate-500 font-medium">
-              <li><a href="#" className="hover:text-blue-600 transition-colors">Tools Library</a></li>
-              <li><a href="#" className="hover:text-blue-600 transition-colors">AI Utilities</a></li>
-              <li><a href="#" className="hover:text-blue-600 transition-colors">API Access</a></li>
-              <li><a href="#" className="hover:text-blue-600 transition-colors">Premium Plans</a></li>
+              <li><Link href="/tools" className="hover:text-blue-600 transition-colors">Tools Library</Link></li>
+              <li><Link href="/ai-tools" className="hover:text-blue-600 transition-colors">AI Utilities</Link></li>
+              <li><Link href="#" className="hover:text-blue-600 transition-colors">API Access</Link></li>
+              <li><Link href="#" className="hover:text-blue-600 transition-colors">Premium Plans</Link></li>
             </ul>
           </div>
 
           <div>
             <h5 className="font-bold text-slate-900 mb-6 uppercase tracking-widest text-xs">Company</h5>
             <ul className="space-y-4 text-sm text-slate-500 font-medium">
-              <li><a href="#" className="hover:text-blue-600 transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-blue-600 transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-blue-600 transition-colors">Blog</a></li>
-              <li><a href="#" className="hover:text-blue-600 transition-colors">Contact</a></li>
+              <li><Link href="/about" className="hover:text-blue-600 transition-colors">About Us</Link></li>
+              <li><Link href="#" className="hover:text-blue-600 transition-colors">Careers</Link></li>
+              <li><Link href="/blog" className="hover:text-blue-600 transition-colors">Blog</Link></li>
+              <li><Link href="/contact" className="hover:text-blue-600 transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -46,9 +47,9 @@ const Footer: React.FC = () => {
             <h5 className="font-bold text-slate-900 mb-6 uppercase tracking-widest text-xs">Legal & Support</h5>
             <div className="flex flex-col gap-4">
               <ul className="space-y-4 text-sm text-slate-500 font-medium">
-                <li><a href="#" className="hover:text-blue-600 transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-blue-600 transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-blue-600 transition-colors">Status Page</a></li>
+                <li><Link href="#" className="hover:text-blue-600 transition-colors">Terms of Service</Link></li>
+                <li><Link href="#" className="hover:text-blue-600 transition-colors">Privacy Policy</Link></li>
+                <li><Link href="#" className="hover:text-blue-600 transition-colors">Status Page</Link></li>
               </ul>
             </div>
             <div className="mt-8">
@@ -72,9 +73,9 @@ const Footer: React.FC = () => {
             © {new Date().getFullYear()} Bitviron Platform. All rights reserved.
           </div>
           <div className="flex gap-8">
-            <a href="#" className="text-sm text-slate-400 hover:text-slate-900 font-medium">Twitter</a>
-            <a href="#" className="text-sm text-slate-400 hover:text-slate-900 font-medium">GitHub</a>
-            <a href="#" className="text-sm text-slate-400 hover:text-slate-900 font-medium">Solutions</a>
+            <Link href="#" className="text-sm text-slate-400 hover:text-slate-900 font-medium">Twitter</Link>
+            <Link href="#" className="text-sm text-slate-400 hover:text-slate-900 font-medium">GitHub</Link>
+            <Link href="#" className="text-sm text-slate-400 hover:text-slate-900 font-medium">Solutions</Link>
           </div>
         </div>
       </div>
