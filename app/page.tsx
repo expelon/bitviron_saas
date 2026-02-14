@@ -56,7 +56,7 @@ export default function Home() {
                     <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/20 blur-[100px] rounded-full -mr-48 -mt-48"></div>
                     <div className="max-container px-6 relative z-10 flex flex-col md:flex-row items-center justify-between">
                         <div className="md:w-1/2 mb-12 md:mb-0">
-                            <h2 className="text-5xl md:text-7xl font-black mb-8 leading-tight font-display">READY TO BOOST FLOW?</h2>
+                            <h2 className="text-4xl md:text-7xl font-black mb-8 leading-tight font-display">READY TO BOOST FLOW?</h2>
                             <p className="text-xl text-slate-300 mb-10 max-w-lg">
                                 Join 2M+ users worldwide who simplify their digital life with Bitviron's utility engine.
                             </p>
@@ -71,19 +71,19 @@ export default function Home() {
                         <div className="md:w-1/2 flex justify-center">
                             <div className="grid grid-cols-2 gap-8">
                                 <div className="text-center">
-                                    <div className="text-5xl font-bold mb-2 font-display">2M+</div>
+                                    <div className="text-4xl md:text-5xl font-bold mb-2 font-display">2M+</div>
                                     <div className="text-slate-400 uppercase tracking-widest text-xs">Active Users</div>
                                 </div>
                                 <div className="text-center">
-                                    <div className="text-5xl font-bold mb-2 font-display">50+</div>
+                                    <div className="text-4xl md:text-5xl font-bold mb-2 font-display">50+</div>
                                     <div className="text-slate-400 uppercase tracking-widest text-xs">Smart Tools</div>
                                 </div>
                                 <div className="text-center">
-                                    <div className="text-5xl font-bold mb-2 font-display">99.9%</div>
+                                    <div className="text-4xl md:text-5xl font-bold mb-2 font-display">99.9%</div>
                                     <div className="text-slate-400 uppercase tracking-widest text-xs">Uptime</div>
                                 </div>
                                 <div className="text-center">
-                                    <div className="text-5xl font-bold mb-2 font-display">24/7</div>
+                                    <div className="text-4xl md:text-5xl font-bold mb-2 font-display">24/7</div>
                                     <div className="text-slate-400 uppercase tracking-widest text-xs">Support</div>
                                 </div>
                             </div>
