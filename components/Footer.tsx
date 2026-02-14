@@ -1,3 +1,4 @@
+"use client";
 
 import React from 'react';
 
@@ -25,9 +26,9 @@ const Footer: React.FC = () => {
             <h5 className="font-bold text-slate-900 mb-6 uppercase tracking-widest text-xs">Product</h5>
             <ul className="space-y-4 text-sm text-slate-500 font-medium">
               <li><a href="#" className="hover:text-blue-600 transition-colors">Tools Library</a></li>
-              <li><a href="#" className="hover:text-blue-600 transition-colors">AI Features</a></li>
+              <li><a href="#" className="hover:text-blue-600 transition-colors">AI Utilities</a></li>
               <li><a href="#" className="hover:text-blue-600 transition-colors">API Access</a></li>
-              <li><a href="#" className="hover:text-blue-600 transition-colors">Enterprise</a></li>
+              <li><a href="#" className="hover:text-blue-600 transition-colors">Premium Plans</a></li>
             </ul>
           </div>
 
@@ -35,27 +36,34 @@ const Footer: React.FC = () => {
             <h5 className="font-bold text-slate-900 mb-6 uppercase tracking-widest text-xs">Company</h5>
             <ul className="space-y-4 text-sm text-slate-500 font-medium">
               <li><a href="#" className="hover:text-blue-600 transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-blue-600 transition-colors">Carrers</a></li>
+              <li><a href="#" className="hover:text-blue-600 transition-colors">Careers</a></li>
               <li><a href="#" className="hover:text-blue-600 transition-colors">Blog</a></li>
               <li><a href="#" className="hover:text-blue-600 transition-colors">Contact</a></li>
             </ul>
           </div>
 
           <div className="col-span-2">
-            <h5 className="font-bold text-slate-900 mb-6 uppercase tracking-widest text-xs">Newsletter</h5>
-            <div className="flex gap-2">
-              <input
-                type="email"
-                placeholder="Enter email"
-                className="bg-white border border-slate-200 px-4 py-3 rounded-xl outline-none focus:border-blue-500 transition-colors w-full"
-              />
-              <button className="bg-slate-900 text-white px-6 py-3 rounded-xl font-bold hover:bg-slate-800 transition-colors">
-                Join
-              </button>
+            <h5 className="font-bold text-slate-900 mb-6 uppercase tracking-widest text-xs">Legal & Support</h5>
+            <div className="flex flex-col gap-4">
+              <ul className="space-y-4 text-sm text-slate-500 font-medium">
+                <li><a href="#" className="hover:text-blue-600 transition-colors">Terms of Service</a></li>
+                <li><a href="#" className="hover:text-blue-600 transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-blue-600 transition-colors">Status Page</a></li>
+              </ul>
             </div>
-            <p className="text-[10px] text-slate-400 mt-4 leading-tight">
-              By subscribing, you agree to our Terms of Service and Privacy Policy.
-            </p>
+            <div className="mt-8">
+              <h5 className="font-bold text-slate-900 mb-4 uppercase tracking-widest text-xs">Newsletter</h5>
+              <div className="flex gap-2">
+                <input
+                  type="email"
+                  placeholder="Enter email"
+                  className="bg-white border border-slate-200 px-4 py-3 rounded-xl outline-none focus:border-blue-500 transition-colors w-full"
+                />
+                <button className="bg-slate-900 text-white px-6 py-3 rounded-xl font-bold hover:bg-slate-800 transition-colors">
+                  Join
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -66,7 +74,7 @@ const Footer: React.FC = () => {
           <div className="flex gap-8">
             <a href="#" className="text-sm text-slate-400 hover:text-slate-900 font-medium">Twitter</a>
             <a href="#" className="text-sm text-slate-400 hover:text-slate-900 font-medium">GitHub</a>
-            <a href="#" className="text-sm text-slate-400 hover:text-slate-900 font-medium">Dribbble</a>
+            <a href="#" className="text-sm text-slate-400 hover:text-slate-900 font-medium">Solutions</a>
           </div>
         </div>
       </div>

@@ -14,10 +14,11 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
   };
 
   const menuItems = [
-    { label: 'Features', href: '#' },
-    { label: 'Solutions', href: '#' },
-    { label: 'Resources', href: '#' },
-    { label: 'Pricing', href: '#' },
+    { label: 'Tools', href: '#' },
+    { label: 'AI Tools', href: '#' },
+    { label: 'Category', href: '#' },
+    { label: 'Blog', href: '#' },
+    { label: 'About Us', href: '#' },
   ];
 
   return (
@@ -48,9 +49,8 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
         </nav>
 
         <div className="hidden lg:flex items-center gap-4">
-          <button className="text-sm font-semibold text-slate-600 hover:text-slate-900 px-4 py-2">Sign in</button>
-          <button className="bg-blue-600 text-white text-sm font-bold px-7 py-3 rounded-full shadow-lg shadow-blue-200 hover:bg-blue-700 hover:scale-105 transition-all active:scale-95">
-            Get demo
+          <button className="text-sm font-bold text-slate-900 border-2 border-slate-900/10 px-6 py-2.5 rounded-full hover:bg-slate-50 transition-all active:scale-95">
+            Contact
           </button>
         </div>
 
@@ -89,11 +89,8 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
           </nav>
 
           <div className={`mt-auto space-y-4 transform transition-all duration-700 delay-500 ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-            <button className="w-full text-slate-900 font-bold py-4 text-center border-2 border-slate-900/10 rounded-2xl hover:bg-slate-50 transition-colors">
-              Sign in
-            </button>
-            <button className="w-full bg-blue-600 text-white font-bold py-5 rounded-2xl shadow-xl shadow-blue-200 hover:bg-blue-700 transition-colors">
-              Get Demo Now
+            <button className="w-full bg-slate-900 text-white font-bold py-5 rounded-2xl shadow-xl shadow-slate-200 hover:bg-slate-800 transition-colors">
+              Contact
             </button>
           </div>
 
