@@ -1,14 +1,25 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 interface HeaderProps {
-  isScrolled: boolean;
+  isScrolled?: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
+const Header: React.FC<HeaderProps> = ({ isScrolled: propIsScrolled }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [internalIsScrolled, setInternalIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setInternalIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const isScrolled = propIsScrolled ?? internalIsScrolled;
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -16,9 +27,9 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
 
   const menuItems = [
     { label: 'Tools', href: '/tools' },
-    { label: 'Blog', href: '/blog' },
     { label: 'AI Tools', href: '/ai-tools' },
     { label: 'Category', href: '/category' },
+    { label: 'Blog', href: '/blog' },
     { label: 'About Us', href: '/about' },
   ];
 

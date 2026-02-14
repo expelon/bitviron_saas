@@ -1,25 +1,14 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import Header from '../components/Header';
+import React, { useState } from 'react';
 import Hero from '../components/Hero';
 import FeatureSection from '../components/FeatureSection';
 import ToolGrid from '../components/ToolGrid';
-import Footer from '../components/Footer';
 import AIToolModal from '../components/AIToolModal';
 import { Tool } from '../types';
 
 export default function Home() {
     const [selectedTool, setSelectedTool] = useState<Tool | null>(null);
-    const [isScrolled, setIsScrolled] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
     const handleToolClick = (tool: Tool) => {
         setSelectedTool(tool);
@@ -27,8 +16,6 @@ export default function Home() {
 
     return (
         <div className="min-h-screen selection:bg-blue-100 selection:text-blue-900 font-sans">
-            <Header isScrolled={isScrolled} />
-
             <main>
                 {/* Section 1: Hero (Tools Focused) */}
                 <Hero onCtaClick={() => document.getElementById('tools-grid')?.scrollIntoView({ behavior: 'smooth' })} />
@@ -91,8 +78,6 @@ export default function Home() {
                     </div>
                 </section>
             </main>
-
-            <Footer />
 
             {selectedTool && (
                 <AIToolModal
