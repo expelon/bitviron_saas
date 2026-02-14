@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
               Your complete digital tools solution platform designed to simplify everyday online tasks.
             </p>
           </div>
-          
+
           <div>
             <h5 className="font-bold text-slate-900 mb-6 uppercase tracking-widest text-xs">Product</h5>
             <ul className="space-y-4 text-sm text-slate-500 font-medium">
@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
               <li><a href="#" className="hover:text-blue-600 transition-colors">Enterprise</a></li>
             </ul>
           </div>
-          
+
           <div>
             <h5 className="font-bold text-slate-900 mb-6 uppercase tracking-widest text-xs">Company</h5>
             <ul className="space-y-4 text-sm text-slate-500 font-medium">
@@ -40,13 +40,13 @@ const Footer: React.FC = () => {
               <li><a href="#" className="hover:text-blue-600 transition-colors">Contact</a></li>
             </ul>
           </div>
-          
+
           <div className="col-span-2">
             <h5 className="font-bold text-slate-900 mb-6 uppercase tracking-widest text-xs">Newsletter</h5>
             <div className="flex gap-2">
-              <input 
-                type="email" 
-                placeholder="Enter email" 
+              <input
+                type="email"
+                placeholder="Enter email"
                 className="bg-white border border-slate-200 px-4 py-3 rounded-xl outline-none focus:border-blue-500 transition-colors w-full"
               />
               <button className="bg-slate-900 text-white px-6 py-3 rounded-xl font-bold hover:bg-slate-800 transition-colors">
@@ -58,10 +58,10 @@ const Footer: React.FC = () => {
             </p>
           </div>
         </div>
-        
+
         <div className="pt-12 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-sm text-slate-400 font-medium">
-            © 2024 Bitviron Platform. All rights reserved.
+            © {new Date().getFullYear()} Bitviron Platform. All rights reserved.
           </div>
           <div className="flex gap-8">
             <a href="#" className="text-sm text-slate-400 hover:text-slate-900 font-medium">Twitter</a>
