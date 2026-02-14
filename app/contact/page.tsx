@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 
 const images = [
@@ -46,7 +46,32 @@ const images = [
     }
 ];
 
+const faqs = [
+    {
+        question: "How long does a project take?",
+        answer: "Each project's timeline depends on the scope. A simple landing page can be completed within 2 weeks while a full e-commerce platform might take 3 – 6 weeks. Once we understand your needs, we'll give you a clear, realistic timeline."
+    },
+    {
+        question: "Can I manage a site after it's built?",
+        answer: "Yes, we build our sites using easy-to-use CMS platforms that allow you to manage and update your content without any technical knowledge. We also provide documentation and training to help you get started."
+    },
+    {
+        question: "How does pricing work?",
+        answer: "Our pricing is tailored to the specific needs of each project. We offer competitive rates and transparent pricing models. We'll provide you with a detailed quote after we've discussed your requirements."
+    },
+    {
+        question: "What tools are used in building?",
+        answer: "We use a variety of state-of-the-art tools and technologies to build high-performance websites and applications. Our stack includes React, Next.js, Tailwind CSS, and other modern frameworks."
+    },
+    {
+        question: "How much does it cost to build an app?",
+        answer: "The cost of building an app varies depending on its complexity and features. We'll work with you to understand your goals and budget, and provide you with a comprehensive proposal."
+    }
+];
+
 export default function ContactPage() {
+    const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+
     return (
         <div className="min-h-screen bg-[#FDFDFD] overflow-hidden relative font-sans selection:bg-black selection:text-white pt-32 pb-20">
 
@@ -95,8 +120,47 @@ export default function ContactPage() {
                     ))}
                 </div>
 
+                {/* FAQ Section */}
+                <div className="mb-20 md:mb-32 max-w-4xl mx-auto">
+                    <div className="mb-16">
+                        <span className="text-sm font-medium text-slate-400 block mb-4">
+                            Frequently Asked Questions
+                        </span>
+                        <h2 className="text-4xl md:text-6xl font-bold text-slate-900 tracking-tight">
+                            Your Questions<br />Answered Here
+                        </h2>
+                    </div>
+
+                    <div className="space-y-0 border-t border-slate-100">
+                        {faqs.map((faq, index) => (
+                            <div key={index} className="border-b border-slate-100 py-10 transition-colors hover:bg-slate-50/50">
+                                <button
+                                    onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                                    className="w-full flex justify-between items-center text-left group px-2"
+                                >
+                                    <h3 className="text-lg md:text-xl font-medium text-slate-900 pr-8">
+                                        {faq.question}
+                                    </h3>
+                                    <div className="text-2xl md:text-3xl text-slate-400 group-hover:text-slate-900 transition-colors">
+                                        {openFaqIndex === index ? '×' : '+'}
+                                    </div>
+                                </button>
+
+                                <div className={`grid transition-all duration-500 ease-in-out ${openFaqIndex === index ? 'grid-rows-[1fr] opacity-100 mt-6' : 'grid-rows-[0fr] opacity-0'}`}>
+                                    <div className="overflow-hidden px-2">
+                                        <p className="text-sm md:text-base text-slate-500 leading-relaxed max-w-2xl">
+                                            {faq.answer}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+
                 {/* New Form Section */}
-                <div className="relative mb-32 md:mb-48">
+                <div className="relative mb-16 md:mb-24">
                     {/* Background Text for Section - "STUDIO" */}
                     <div className="absolute top-[20%] -translate-y-1/2 left-0 w-full pointer-events-none select-none z-0">
                         <h1 className="text-[20vw] font-[1000] text-slate-900/[0.04] uppercase tracking-tighter leading-none scale-y-110 ml-[-5%]">
