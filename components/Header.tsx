@@ -13,11 +13,18 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const menuItems = [
+    { label: 'Features', href: '#' },
+    { label: 'Solutions', href: '#' },
+    { label: 'Resources', href: '#' },
+    { label: 'Pricing', href: '#' },
+  ];
+
   return (
-    <header className={`absolute top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md py-4 shadow-sm' : 'bg-transparent py-6'}`}>
+    <header className={`absolute top-0 left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'bg-white/90 backdrop-blur-md py-4 shadow-sm' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="grid grid-cols-2 gap-0.5">
+        <div className="flex items-center gap-2 group cursor-pointer">
+          <div className="grid grid-cols-2 gap-0.5 group-hover:rotate-180 transition-transform duration-700">
             <div className="w-3 h-3 rounded-full bg-blue-600"></div>
             <div className="w-3 h-3 rounded-full bg-blue-200"></div>
             <div className="w-3 h-3 rounded-full bg-blue-400"></div>
@@ -28,56 +35,80 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-10">
-          <a href="#" className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Features</a>
-          <a href="#" className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Solutions</a>
-          <a href="#" className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Resources</a>
-          <a href="#" className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Pricing</a>
+          {menuItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors relative group"
+            >
+              {item.label}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+            </a>
+          ))}
         </nav>
 
         <div className="hidden lg:flex items-center gap-4">
           <button className="text-sm font-semibold text-slate-600 hover:text-slate-900 px-4 py-2">Sign in</button>
-          <button className="bg-blue-600 text-white text-sm font-bold px-6 py-2.5 rounded-full shadow-lg shadow-blue-200 hover:bg-blue-700 transition-all active:scale-95">
+          <button className="bg-blue-600 text-white text-sm font-bold px-7 py-3 rounded-full shadow-lg shadow-blue-200 hover:bg-blue-700 hover:scale-105 transition-all active:scale-95">
             Get demo
           </button>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="lg:hidden flex items-center gap-4">
+        {/* Mobile Menu Button - Morphing Hamburger */}
+        <div className="lg:hidden flex items-center z-[110]">
           <button
             onClick={toggleMenu}
-            className="p-2 text-slate-600 hover:text-blue-600 transition-colors focus:outline-none"
+            className="w-10 h-10 flex flex-col justify-center items-center group focus:outline-none"
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? (
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
-            )}
+            <div className={`w-6 h-0.5 bg-slate-900 rounded-full transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1.5' : 'mb-1.5'}`}></div>
+            <div className={`w-6 h-0.5 bg-slate-900 rounded-full transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'mb-1.5'}`}></div>
+            <div className={`w-6 h-0.5 bg-slate-900 rounded-full transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></div>
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      {isMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-slate-100 shadow-xl z-50 animate-in slide-in-from-top duration-300">
-          <div className="px-6 py-8 flex flex-col gap-6">
-            <nav className="flex flex-col gap-6">
-              <a href="#" className="text-lg font-semibold text-slate-900 hover:text-blue-600 transition-colors" onClick={() => setIsMenuOpen(false)}>Features</a>
-              <a href="#" className="text-lg font-semibold text-slate-900 hover:text-blue-600 transition-colors" onClick={() => setIsMenuOpen(false)}>Solutions</a>
-              <a href="#" className="text-lg font-semibold text-slate-900 hover:text-blue-600 transition-colors" onClick={() => setIsMenuOpen(false)}>Resources</a>
-              <a href="#" className="text-lg font-semibold text-slate-900 hover:text-blue-600 transition-colors" onClick={() => setIsMenuOpen(false)}>Pricing</a>
-            </nav>
-            <div className="pt-6 border-t border-slate-100 flex flex-col gap-4">
-              <button className="w-full text-slate-900 font-bold py-3 text-center border border-slate-200 rounded-xl hover:bg-slate-50 transition-colors">Sign in</button>
-              <button className="w-full bg-blue-600 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-200 hover:bg-blue-700 transition-colors">Get demo</button>
-            </div>
+      {/* Mobile Menu Overlay - Premium Glassmorphism */}
+      <div className={`lg:hidden fixed inset-0 z-[105] transition-all duration-500 overflow-hidden ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+        {/* Backdrop Blur Layer */}
+        <div className={`absolute inset-0 bg-white/80 backdrop-blur-2xl transition-all duration-700 ${isMenuOpen ? 'scale-100' : 'scale-110'}`}></div>
+
+        <div className="relative h-full flex flex-col px-8 pt-32 pb-12">
+          <nav className="flex flex-col gap-8">
+            {menuItems.map((item, index) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className={`text-4xl font-black text-slate-900 tracking-tighter hover:text-blue-600 transition-all transform duration-500 ${isMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'}`}
+                style={{ transitionDelay: `${index * 100}ms` }}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.label}.
+              </a>
+            ))}
+          </nav>
+
+          <div className={`mt-auto space-y-4 transform transition-all duration-700 delay-500 ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+            <button className="w-full text-slate-900 font-bold py-4 text-center border-2 border-slate-900/10 rounded-2xl hover:bg-slate-50 transition-colors">
+              Sign in
+            </button>
+            <button className="w-full bg-blue-600 text-white font-bold py-5 rounded-2xl shadow-xl shadow-blue-200 hover:bg-blue-700 transition-colors">
+              Get Demo Now
+            </button>
+          </div>
+
+          {/* Subtle decoration in mobile menu */}
+          <div className="absolute bottom-10 right-10 text-[60px] font-black text-slate-900/5 rotate-12 pointer-events-none">
+            BITVIRON.
           </div>
         </div>
-      )}
+      </div>
+
+      <style jsx>{`
+        header {
+          position: absolute !important;
+        }
+      `}</style>
     </header>
   );
 };
