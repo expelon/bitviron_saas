@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom styles from original index.html */
+.mesh-bg {
+    background-color: #f8fafc;
+    background-image: radial-gradient(at 0% 0%, hsla(210,100%,98%,1) 0, transparent 50%), 
+                      radial-gradient(at 50% 0%, hsla(215,100%,97%,1) 0, transparent 50%), 
+                      radial-gradient(at 100% 0%, hsla(220,100%,98%,1) 0, transparent 50%);
+}
+
+.floating-element {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.delay-1 { animation-delay: 1s; }
+.delay-2 { animation-delay: 2s; }
+.delay-3 { animation-delay: 3s; }
+
+.custom-shadow {
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+}

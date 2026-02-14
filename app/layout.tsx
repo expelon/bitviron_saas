@@ -1,0 +1,31 @@
+import type { Metadata } from "next";
+import "./globals.css";
+import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const plusJakartaSans = Plus_Jakarta_Sans({
+    subsets: ['latin'],
+    variable: '--font-plus-jakarta',
+    weight: ['400', '500', '600', '700', '800']
+});
+
+export const metadata: Metadata = {
+    title: "Bitviron | Digital Tools Platform",
+    description: "All-in-one digital workspace",
+};
+
+export default function RootLayout({
+    children,
+}: Readonly<{
+    children: React.ReactNode;
+}>) {
+    return (
+        <html lang="en">
+            <body
+                className={`${inter.variable} ${plusJakartaSans.variable} antialiased bg-white`}
+            >
+                {children}
+            </body>
+        </html>
+    );
+}
