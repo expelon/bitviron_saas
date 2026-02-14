@@ -52,19 +52,6 @@ const Footer: React.FC = () => {
                 <li><Link href="#" className="hover:text-blue-600 transition-colors">Status Page</Link></li>
               </ul>
             </div>
-            <div className="mt-8">
-              <h5 className="font-bold text-slate-900 mb-4 uppercase tracking-widest text-xs">Newsletter</h5>
-              <div className="flex gap-2">
-                <input
-                  type="email"
-                  placeholder="Enter email"
-                  className="bg-white border border-slate-200 px-4 py-3 rounded-xl outline-none focus:border-blue-500 transition-colors w-full"
-                />
-                <button className="bg-slate-900 text-white px-6 py-3 rounded-xl font-bold hover:bg-slate-800 transition-colors">
-                  Join
-                </button>
-              </div>
-            </div>
           </div>
         </div>
 
