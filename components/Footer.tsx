@@ -2,8 +2,11 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Footer: React.FC = () => {
+  const pathname = usePathname();
+
   return (
     <footer className="bg-slate-50 py-20 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-6">
