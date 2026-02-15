@@ -56,14 +56,14 @@ const team = [
 
 export default function AboutPage() {
     return (
-        <div className="min-h-screen bg-white font-sans selection:bg-black selection:text-white pt-40 overflow-x-hidden">
-            <div className="max-w-[1600px] mx-auto px-8 md:px-12">
+        <div className="min-h-screen bg-white font-sans selection:bg-black selection:text-white pt-32 md:pt-40 overflow-x-hidden w-full">
+            <div className="max-w-[1600px] mx-auto px-6 md:px-12">
 
                 {/* Hero Section */}
                 <div className="grid grid-cols-12 gap-8 mb-32 md:mb-48 relative">
                     {/* Main Title */}
                     <div className="col-span-12 md:col-span-8">
-                        <h1 className="text-7xl md:text-[10vw] font-bold text-slate-900 leading-[0.9] tracking-tighter mb-16">
+                        <h1 className="text-5xl md:text-[10vw] font-bold text-slate-900 leading-[0.9] tracking-tighter mb-12 md:mb-16 break-words">
                             About our<br />agency.
                         </h1>
                     </div>
@@ -77,8 +77,8 @@ export default function AboutPage() {
 
                     {/* Mission Statement & Scroll Circle */}
                     <div className="col-span-12 mt-12 md:mt-0 flex flex-col md:flex-row items-start md:items-end justify-between">
-                        <div className="max-w-2xl">
-                            <p className="text-2xl md:text-3xl font-medium text-slate-800 leading-tight">
+                        <div className="max-w-2xl w-full">
+                            <p className="text-2xl md:text-3xl font-medium text-slate-800 leading-tight max-w-full break-words">
                                 Our mission is to turn your dreams into reality, one pixel at a time. With a diverse team of designers, developers, and innovators, we're constantly pushing the boundaries of what's possible in the digital world.
                             </p>
                         </div>
