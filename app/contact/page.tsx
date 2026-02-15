@@ -76,7 +76,7 @@ export default function ContactPage() {
         <div className="min-h-screen bg-[#FDFDFD] overflow-hidden relative font-sans selection:bg-black selection:text-white pt-32 pb-20">
 
             {/* Background Text Overlay */}
-            <div className="absolute top-[25%] -translate-y-1/2 left-0 w-full flex justify-center pointer-events-none select-none z-0">
+            <div className="absolute top-[20%] -translate-y-1/2 left-0 w-full flex justify-center pointer-events-none select-none z-0">
                 <h1 className="text-[18vw] font-[1000] text-slate-900/[0.05] uppercase tracking-tighter leading-none scale-y-110">
                     TheStudio
                 </h1>
