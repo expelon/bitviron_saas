@@ -28,29 +28,34 @@ const images = [
 
 const team = [
     {
+        name: "Shabin Vs",
+        role: "Founder | CEO",
+        image: "/founder.webp",
+        order: "order-1 md:order-3"
+    },
+    {
+        name: "Sreelakshmi",
+        role: "Creative Director",
+        image: "/creative-director.webp",
+        order: "order-2 md:order-4"
+    },
+    {
         name: "Dianne Russell",
         role: "Product Designer",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2574&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2574&auto=format&fit=crop",
+        order: "order-3 md:order-1"
     },
     {
         name: "Courtney Henry",
         role: "UX Researcher & Copywriter",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2574&auto=format&fit=crop"
-    },
-    {
-        name: "Kristin Watson",
-        role: "Strategy Lead",
-        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2574&auto=format&fit=crop"
-    },
-    {
-        name: "Brooklyn Simmons",
-        role: "Creative Director",
-        image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=2564&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2574&auto=format&fit=crop",
+        order: "order-4 md:order-2"
     },
     {
         name: "Guy Hawkins",
         role: "Technical Lead",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2574&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2574&auto=format&fit=crop",
+        order: "order-5 md:order-5"
     }
 ];
 
@@ -182,7 +187,7 @@ export default function AboutPage() {
                             {team.map((member, index) => (
                                 <div
                                     key={index}
-                                    className={`flex-shrink-0 flex flex-col items-center group/member snap-center md:snap-start transition-all duration-700 
+                                    className={`flex-shrink-0 flex flex-col items-center group/member snap-center md:snap-start transition-all duration-700 ${member.order} 
                                         ${index % 2 !== 0
                                             ? 'md:-translate-y-14'
                                             : ''
