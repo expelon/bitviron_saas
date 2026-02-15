@@ -76,15 +76,15 @@ export default function AboutPage() {
                     </div>
 
                     {/* Mission Statement & Scroll Circle */}
-                    <div className="col-span-12 mt-12 md:mt-0 flex flex-col md:flex-row items-end justify-between">
+                    <div className="col-span-12 mt-12 md:mt-0 flex flex-col md:flex-row items-start md:items-end justify-between">
                         <div className="max-w-2xl">
-                            <p className="text-xl md:text-3xl font-medium text-slate-800 leading-tight">
+                            <p className="text-2xl md:text-3xl font-medium text-slate-800 leading-tight">
                                 Our mission is to turn your dreams into reality, one pixel at a time. With a diverse team of designers, developers, and innovators, we're constantly pushing the boundaries of what's possible in the digital world.
                             </p>
                         </div>
 
                         {/* Scroll Circle Button */}
-                        <div className="mt-12 md:mt-0 flex flex-col items-center group cursor-pointer">
+                        <div className="mt-12 md:mt-0 hidden md:flex flex-col items-center group cursor-pointer">
                             <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-black flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
                                 <span className="text-white text-sm font-medium">Scroll</span>
                             </div>
