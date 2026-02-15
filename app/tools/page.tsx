@@ -77,7 +77,7 @@ export default function ToolsPage() {
     );
 
     return (
-        <div className="min-h-screen bg-[#FDFDFD] selection:bg-black selection:text-white pt-32 pb-40 px-6 md:px-12 w-full overflow-x-hidden">
+        <div className="min-h-screen bg-[#FDFDFD] text-black selection:bg-black selection:text-white pt-32 pb-40 px-6 md:px-12 w-full overflow-x-hidden">
 
             <div className="max-w-[1600px] mx-auto">
 
@@ -88,7 +88,7 @@ export default function ToolsPage() {
                             <span className="w-12 h-[1px] bg-black"></span>
                             <span className="text-xs font-bold uppercase tracking-[0.3em] font-mono">Precision Utilities</span>
                         </div>
-                        <h1 className="text-6xl md:text-[10vw] font-bold leading-[0.85] tracking-tighter uppercase">
+                        <h1 className="text-6xl md:text-[10vw] font-bold leading-[0.85] tracking-tighter uppercase text-black">
                             The Bitviron<br />Product Suite.
                         </h1>
                     </div>
@@ -148,7 +148,7 @@ export default function ToolsPage() {
                                 </div>
                             </div>
 
-                            <div className="pt-12">
+                            <div className="pt-12 text-black">
                                 <button className="flex items-center gap-4 group/btn">
                                     <span className="text-xs font-bold uppercase tracking-widest border-b border-transparent group-hover/btn:border-black transition-all">
                                         Launch Module
