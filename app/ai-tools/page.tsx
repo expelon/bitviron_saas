@@ -12,10 +12,9 @@ export default function AIToolsPage() {
     });
 
     useEffect(() => {
-        // Set launch date to 31 days from now
-        const launchDate = new Date();
-        launchDate.setDate(launchDate.getDate() + 31);
-        launchDate.setHours(0, 0, 0, 0);
+        // Set fixed launch date to April 6, 2026
+        // Using a fixed date ensures the timer doesn't reset on refresh
+        const launchDate = new Date('2026-04-06T00:00:00');
 
         const timer = setInterval(() => {
             const now = new Date();
@@ -51,39 +50,39 @@ export default function AIToolsPage() {
                     </h2>
 
                     {/* Countdown Timer */}
-                    <div className="flex flex-wrap justify-center items-end gap-4 md:gap-12 mb-16 md:mb-24 select-none">
+                    <div className="flex flex-wrap justify-center items-end gap-2 sm:gap-4 md:gap-12 mb-16 md:mb-24 select-none">
                         <div className="flex flex-col items-center group cursor-default">
-                            <span className="text-6xl md:text-8xl lg:text-9xl font-bold leading-none tracking-tighter tabular-nums transition-transform duration-500 group-hover:-translate-y-2">
+                            <span className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold leading-none tracking-tighter tabular-nums transition-transform duration-500 group-hover:-translate-y-2">
                                 {formatNumber(timeLeft.days)}
                             </span>
-                            <span className="text-sm md:text-base font-medium mt-4 text-gray-500 uppercase tracking-widest">Days</span>
+                            <span className="text-[10px] sm:text-sm md:text-base font-medium mt-2 md:mt-4 text-gray-500 uppercase tracking-widest">Days</span>
                         </div>
 
-                        <span className="text-4xl md:text-6xl lg:text-7xl font-light text-gray-400 mb-8 md:mb-10">:</span>
+                        <span className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-light text-gray-400 mb-6 sm:mb-8 md:mb-10">:</span>
 
                         <div className="flex flex-col items-center group cursor-default">
-                            <span className="text-6xl md:text-8xl lg:text-9xl font-bold leading-none tracking-tighter tabular-nums transition-transform duration-500 group-hover:-translate-y-2 delay-75">
+                            <span className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold leading-none tracking-tighter tabular-nums transition-transform duration-500 group-hover:-translate-y-2 delay-75">
                                 {formatNumber(timeLeft.hours)}
                             </span>
-                            <span className="text-sm md:text-base font-medium mt-4 text-gray-500 uppercase tracking-widest">Hours</span>
+                            <span className="text-[10px] sm:text-sm md:text-base font-medium mt-2 md:mt-4 text-gray-500 uppercase tracking-widest">Hours</span>
                         </div>
 
-                        <span className="text-4xl md:text-6xl lg:text-7xl font-light text-gray-400 mb-8 md:mb-10">:</span>
+                        <span className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-light text-gray-400 mb-6 sm:mb-8 md:mb-10">:</span>
 
                         <div className="flex flex-col items-center group cursor-default">
-                            <span className="text-6xl md:text-8xl lg:text-9xl font-bold leading-none tracking-tighter tabular-nums transition-transform duration-500 group-hover:-translate-y-2 delay-100">
+                            <span className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold leading-none tracking-tighter tabular-nums transition-transform duration-500 group-hover:-translate-y-2 delay-100">
                                 {formatNumber(timeLeft.minutes)}
                             </span>
-                            <span className="text-sm md:text-base font-medium mt-4 text-gray-500 uppercase tracking-widest">Minutes</span>
+                            <span className="text-[10px] sm:text-sm md:text-base font-medium mt-2 md:mt-4 text-gray-500 uppercase tracking-widest">Mins</span>
                         </div>
 
-                        <span className="text-4xl md:text-6xl lg:text-7xl font-light text-gray-400 mb-8 md:mb-10">:</span>
+                        <span className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-light text-gray-400 mb-6 sm:mb-8 md:mb-10">:</span>
 
                         <div className="flex flex-col items-center group cursor-default">
-                            <span className="text-6xl md:text-8xl lg:text-9xl font-bold leading-none tracking-tighter tabular-nums transition-transform duration-500 group-hover:-translate-y-2 delay-150">
+                            <span className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold leading-none tracking-tighter tabular-nums transition-transform duration-500 group-hover:-translate-y-2 delay-150">
                                 {formatNumber(timeLeft.seconds)}
                             </span>
-                            <span className="text-sm md:text-base font-medium mt-4 text-gray-500 uppercase tracking-widest">Seconds</span>
+                            <span className="text-[10px] sm:text-sm md:text-base font-medium mt-2 md:mt-4 text-gray-500 uppercase tracking-widest">Secs</span>
                         </div>
                     </div>
 
