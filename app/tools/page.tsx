@@ -1,152 +1,181 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Search, ArrowUpRight, Sparkles, Zap, Layout, Code, PenTool, TrendingUp, BarChart, Globe, Command, Filter } from 'lucide-react';
+import {
+    ArrowUpRight,
+    Search,
+    ChevronRight,
+    Sparkles,
+    CaseUpper,
+    FileJson,
+    Hash,
+    ShieldCheck,
+    Scissors,
+    MousePointer2,
+    Terminal,
+    Cpu
+} from 'lucide-react';
 
-const categories = [
-    { id: 'all', label: 'ALL' },
-    { id: 'ai', label: 'AI' },
-    { id: 'design', label: 'DESIGN' },
-    { id: 'dev', label: 'DEV' },
-    { id: 'prod', label: 'PROD' },
-];
-
-const tools = [
-    { id: 1, name: "Midjourney", desc: "Generative AI Art", cat: "ai", year: "2023", icon: Sparkles },
-    { id: 2, name: "ChatGPT", desc: "OpenAI Model", cat: "ai", year: "2022", icon: Zap },
-    { id: 3, name: "Figma", desc: "Interface Design", cat: "design", year: "2016", icon: Layout },
-    { id: 4, name: "Notion", desc: "Workspace OS", cat: "prod", year: "2018", icon: PenTool },
-    { id: 5, name: "Vercel", desc: "Frontend Cloud", cat: "dev", year: "2015", icon: Globe },
-    { id: 6, name: "Copilot", desc: "AI Pair Programmer", cat: "dev", year: "2021", icon: Code },
-    { id: 7, name: "Framer", desc: "No-Code Builder", cat: "design", year: "2019", icon: Layout },
-    { id: 8, name: "Linear", desc: "Issue Tracking", cat: "prod", year: "2020", icon: TrendingUp },
+// Tool data mapped from internal constants but formatted for premium showcase
+const products = [
+    {
+        id: 'ai-summarizer',
+        name: 'Bitviron Intelligence',
+        description: 'Advanced neural processing for real-time text summarization and semantic analysis.',
+        tag: 'AI ENGINE',
+        icon: <Sparkles className="w-8 h-8 text-blue-600" />,
+        version: 'v2.1'
+    },
+    {
+        id: 'json-formatter',
+        name: 'Bitviron Developer Kit',
+        description: 'High-performance JSON orchestration, validation, and schema optimization.',
+        tag: 'SYSTEM CORE',
+        icon: <FileJson className="w-8 h-8 text-black" />,
+        version: 'v1.4'
+    },
+    {
+        id: 'password-gen',
+        name: 'Bitviron Vault',
+        description: 'Cryptographically secure entropy generation for high-level asset protection.',
+        tag: 'SECURITY',
+        icon: <ShieldCheck className="w-8 h-8 text-green-600" />,
+        version: 'v3.0'
+    },
+    {
+        id: 'case-converter',
+        name: 'Bitviron Text Engine',
+        description: 'Precision typography and string manipulation for rapid content formatting.',
+        tag: 'UTILITY',
+        icon: <CaseUpper className="w-8 h-8 text-orange-600" />,
+        version: 'v1.2'
+    },
+    {
+        id: 'svg-optimizer',
+        name: 'Bitviron Graphics SDK',
+        description: 'Lossless vector optimization and geometric simplification for web assets.',
+        tag: 'VISUAL',
+        icon: <Scissors className="w-8 h-8 text-pink-600" />,
+        version: 'v2.5'
+    },
+    {
+        id: 'url-encoder',
+        name: 'Bitviron Network Tools',
+        description: 'Safe transport encoding for complex URI structures and API integration.',
+        tag: 'PROTOCOL',
+        icon: <Hash className="w-8 h-8 text-purple-600" />,
+        version: 'v1.1'
+    }
 ];
 
 export default function ToolsPage() {
-    const [activeCategory, setActiveCategory] = useState('all');
     const [searchQuery, setSearchQuery] = useState('');
 
-    const filteredTools = tools.filter(tool => {
-        const matchesCategory = activeCategory === 'all' || tool.cat === activeCategory;
-        const matchesSearch = tool.name.toLowerCase().includes(searchQuery.toLowerCase());
-        return matchesCategory && matchesSearch;
-    });
+    const filtered = products.filter(p =>
+        p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        p.tag.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
     return (
-        <div className="min-h-screen bg-[#F4F4F0] text-black font-sans pt-24 pb-24 selection:bg-black selection:text-white">
+        <div className="min-h-screen bg-[#FDFDFD] selection:bg-black selection:text-white pt-32 pb-40 px-6 md:px-12 w-full overflow-x-hidden">
 
-            <div className="max-w-[1400px] mx-auto px-4 md:px-8">
+            <div className="max-w-[1600px] mx-auto">
 
-                {/* Header Section */}
-                <div className="border-b-2 border-black pb-12 mb-12">
-                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-                        <div>
-                            <div className="flex items-center gap-2 mb-4">
-                                <span className="w-3 h-3 bg-black rounded-full animate-pulse"></span>
-                                <span className="text-xs font-mono uppercase tracking-widest">Bitviron Directory 2024</span>
-                            </div>
-                            <h1 className="text-6xl md:text-9xl font-black tracking-tighter leading-[0.85] uppercase">
-                                Tool<br />Index
-                            </h1>
+                {/* Editorial Hero */}
+                <div className="grid grid-cols-12 gap-8 mb-32 border-b border-black pb-12 items-end">
+                    <div className="col-span-12 lg:col-span-9">
+                        <div className="flex items-center gap-3 mb-8">
+                            <span className="w-12 h-[1px] bg-black"></span>
+                            <span className="text-xs font-bold uppercase tracking-[0.3em] font-mono">Precision Utilities</span>
                         </div>
+                        <h1 className="text-6xl md:text-[10vw] font-bold leading-[0.85] tracking-tighter uppercase">
+                            The Bitviron<br />Product Suite.
+                        </h1>
+                    </div>
 
-                        <div className="max-w-xs">
-                            <p className="font-mono text-xs leading-relaxed mb-6">
-                                [ SYSTEM NOTE ]<br />
-                                A collection of high-performance utilities for modern digital craftsmen. Access verified tools.
+                    <div className="col-span-12 lg:col-span-3 flex flex-col justify-end lg:items-end text-left lg:text-right">
+                        <div className="max-w-xs space-y-6">
+                            <p className="text-sm font-medium text-slate-500 leading-relaxed uppercase font-mono">
+                                [ Native ecosystem ]<br />
+                                High-performance modules engineered for professional-grade workflows.
                             </p>
 
-                            {/* Search Input */}
-                            <div className="relative border-2 border-black bg-white">
+                            <div className="relative group">
                                 <input
                                     type="text"
-                                    placeholder="SEARCH KEYWORD..."
-                                    className="w-full bg-transparent p-3 pr-10 font-mono text-sm uppercase placeholder:text-gray-400 focus:outline-none"
+                                    placeholder="Query system..."
+                                    className="w-full bg-transparent border-b border-black py-2 pr-10 text-sm font-mono uppercase focus:outline-none placeholder:text-slate-300"
                                     value={searchQuery}
                                     onChange={(e) => setSearchQuery(e.target.value)}
                                 />
-                                <div className="absolute right-3 top-1/2 -translate-y-1/2">
-                                    <Command className="w-4 h-4" />
-                                </div>
+                                <Search className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4" />
                             </div>
                         </div>
                     </div>
                 </div>
 
-                {/* Filter Bar */}
-                <div className="border-2 border-black bg-white mb-12 overflow-x-auto no-scrollbar">
-                    <div className="flex">
-                        <div className="p-4 border-r-2 border-black flex items-center justify-center bg-[#F4F4F0]">
-                            <Filter className="w-5 h-5" />
-                        </div>
-                        {categories.map((cat) => (
-                            <button
-                                key={cat.id}
-                                onClick={() => setActiveCategory(cat.id)}
-                                className={`px-8 py-4 font-mono text-sm uppercase tracking-widest border-r-2 border-black last:border-r-0 whitespace-nowrap transition-all
-                                ${activeCategory === cat.id
-                                        ? 'bg-black text-white'
-                                        : 'bg-white text-black hover:bg-gray-100'}`}
-                            >
-                                {cat.label}
-                            </button>
-                        ))}
-                    </div>
-                </div>
+                {/* Product Showcase Table/Grid Hybrid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
+                    {filtered.map((product, idx) => (
+                        <div key={product.id} className="group flex flex-col justify-between h-full border-l border-slate-100 pl-8 relative">
 
-                {/* Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border-t-2 border-l-2 border-black bg-white">
-                    {filteredTools.map((tool, index) => (
-                        <div
-                            key={tool.id}
-                            className="group relative border-r-2 border-b-2 border-black p-8 aspect-square flex flex-col justify-between hover:bg-black hover:text-white transition-colors duration-300 cursor-pointer"
-                        >
-                            {/* Top row */}
-                            <div className="flex justify-between items-start">
-                                <span className="font-mono text-xs opacity-50">0{index + 1}</span>
-                                <ArrowUpRight className="w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                            </div>
+                            {/* Vertical indexing */}
+                            <div className="absolute left-[-1px] top-0 w-[1px] h-0 bg-black group-hover:h-full transition-all duration-700 ease-in-out"></div>
 
-                            {/* Middle Icon area */}
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform transition-transform duration-500 group-hover:scale-110">
-                                <tool.icon className="w-16 h-16 stroke-[1.5]" />
-                            </div>
-
-                            {/* Bottom Info */}
-                            <div>
-                                <div className="flex justify-between items-end border-b border-black group-hover:border-white pb-2 mb-2">
-                                    <span className="font-mono text-xs uppercase opacity-70">{tool.cat}</span>
-                                    <span className="font-mono text-xs opacity-50">{tool.year}</span>
+                            <div className="space-y-8">
+                                <div className="flex justify-between items-start">
+                                    <div className="w-20 h-20 bg-slate-50 rounded-3xl flex items-center justify-center group-hover:bg-slate-200 group-hover:rotate-6 transition-all duration-500 shadow-sm border border-slate-100">
+                                        <div className="transition-colors duration-500">
+                                            {product.icon}
+                                        </div>
+                                    </div>
+                                    <span className="font-mono text-[10px] text-slate-300">0{idx + 1} // {product.version}</span>
                                 </div>
-                                <h3 className="text-2xl font-bold tracking-tight uppercase">{tool.name}</h3>
-                                <p className="text-xs font-mono mt-2 opacity-0 h-0 group-hover:opacity-70 group-hover:h-auto transition-all duration-300">
-                                    {tool.desc}
-                                </p>
+
+                                <div className="space-y-4">
+                                    <div className="space-y-2">
+                                        <span className="text-[10px] font-bold tracking-[0.2em] text-slate-400 uppercase font-mono">
+                                            {product.tag}
+                                        </span>
+                                        <h3 className="text-3xl font-bold tracking-tight text-slate-900 group-hover:translate-x-2 transition-transform duration-500">
+                                            {product.name}
+                                        </h3>
+                                    </div>
+
+                                    <p className="text-slate-500 text-sm md:text-base leading-relaxed max-w-sm">
+                                        {product.description}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="pt-12">
+                                <button className="flex items-center gap-4 group/btn">
+                                    <span className="text-xs font-bold uppercase tracking-widest border-b border-transparent group-hover/btn:border-black transition-all">
+                                        Launch Module
+                                    </span>
+                                    <div className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center group-hover/btn:bg-black group-hover/btn:text-white transition-all duration-300 transform group-hover/btn:rotate-45">
+                                        <ArrowUpRight className="w-5 h-5" />
+                                    </div>
+                                </button>
                             </div>
                         </div>
                     ))}
-
-                    {/* Empty Grid Fillers (Decorative) */}
-                    {[...Array(4 - (filteredTools.length % 4 || 4))].map((_, i) => (
-                        <div key={`filler-${i}`} className="hidden lg:block border-r-2 border-b-2 border-black bg-[#F4F4F0] opacity-50 pattern-diagonal-lines"></div>
-                    ))}
                 </div>
 
-                {/* Footer Info */}
-                <div className="mt-12 border-t-2 border-black pt-4 flex justify-between font-mono text-xs uppercase">
-                    <span>© 2024 Bitviron Systems</span>
-                    <span className="hidden md:inline">Scroll for more</span>
-                    <span>v2.0.4</span>
+                {/* Technical Footer Decoration */}
+                <div className="mt-40 pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6 opacity-30 select-none pointer-events-none font-mono text-[10px] uppercase tracking-widest">
+                    <div className="flex gap-12">
+                        <span className="flex items-center gap-2"><Cpu className="w-3 h-3" /> Core: Active</span>
+                        <span className="flex items-center gap-2"><Terminal className="w-3 h-3" /> Status: Verified</span>
+                    </div>
+                    <span>Bitviron Multi-Tool Ecosystem © 2024</span>
+                    <div className="flex gap-12">
+                        <span>Latency: 12ms</span>
+                        <span>Uptime: 99.9%</span>
+                    </div>
                 </div>
 
             </div>
-
-            {/* CSS Pattern for filler cells */}
-            <style jsx>{`
-                .pattern-diagonal-lines {
-                    background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, #000 10px, #000 11px);
-                }
-            `}</style>
         </div>
     );
 }
