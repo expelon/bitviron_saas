@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
@@ -63,6 +63,138 @@ const categories = [
     }
 ];
 
+// Category Card Component with Center-Only Reveal
+function CategoryCard({ category, index }: { category: typeof categories[0]; index: number }) {
+    const cardRef = useRef<HTMLAnchorElement>(null);
+    const [isVisible, setIsVisible] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        // Check if mobile
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
+        // Check on scroll for center detection
+        const handleScroll = () => {
+            if (!isMobile || !cardRef.current) return;
+
+            const rect = cardRef.current.getBoundingClientRect();
+            const viewportCenter = window.innerHeight / 2;
+            const cardCenter = rect.top + rect.height / 2;
+            const distanceFromCenter = Math.abs(viewportCenter - cardCenter);
+
+            // Reveal only if this card is in the center (within 150px)
+            setIsVisible(distanceFromCenter < 150);
+        };
+
+        // Intersection Observer to trigger checks only when card is in viewport
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (!isMobile) return;
+
+                    if (entry.isIntersecting) {
+                        handleScroll(); // Check if it's centered
+                    } else {
+                        setIsVisible(false); // Hide when out of viewport
+                    }
+                });
+            },
+            {
+                threshold: [0.1, 0.5, 0.9],
+                rootMargin: '0px'
+            }
+        );
+
+        if (cardRef.current) {
+            observer.observe(cardRef.current);
+        }
+
+        if (isMobile) {
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            handleScroll(); // Initial check
+        }
+
+        return () => {
+            if (cardRef.current) {
+                observer.unobserve(cardRef.current);
+            }
+            window.removeEventListener('resize', checkMobile);
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [isMobile]);
+
+    return (
+        <Link
+            ref={cardRef}
+            href={`/category/${category.id}`}
+            className="group relative bg-white overflow-hidden transition-all duration-500 hover:shadow-2xl"
+            style={{ aspectRatio: '3/4' }}
+        >
+            {/* Background Image - Center card only on mobile, hover on desktop */}
+            <div
+                className={`absolute inset-0 transition-opacity duration-700 ${isMobile
+                        ? (isVisible ? 'opacity-100' : 'opacity-0')
+                        : 'opacity-0 group-hover:opacity-100'
+                    }`}
+            >
+                <Image
+                    src={category.image}
+                    alt={category.title}
+                    fill
+                    className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+            </div>
+
+            {/* Content */}
+            <div className="relative h-full flex flex-col justify-between p-8 md:p-10">
+                {/* Subtitle */}
+                <div>
+                    <p
+                        className={`text-[10px] md:text-xs uppercase tracking-widest mb-8 transition-colors duration-500 ${isMobile
+                                ? (isVisible ? 'text-white/80' : 'text-slate-400')
+                                : 'text-slate-400 group-hover:text-white/80'
+                            }`}
+                    >
+                        {category.subtitle}
+                    </p>
+                </div>
+
+                {/* Title */}
+                <div className="flex-1 flex items-center">
+                    <h2
+                        className={`text-3xl md:text-4xl lg:text-5xl font-light leading-tight transition-colors duration-500 break-words ${isMobile
+                                ? (isVisible ? 'text-white' : 'text-slate-900')
+                                : 'text-slate-900 group-hover:text-white'
+                            }`}
+                        style={{ fontFamily: 'Georgia, serif' }}
+                    >
+                        {category.title}
+                    </h2>
+                </div>
+
+                {/* Link */}
+                <div
+                    className={`flex items-center gap-2 transition-colors duration-500 ${isMobile
+                            ? (isVisible ? 'text-white' : 'text-slate-600')
+                            : 'text-slate-600 group-hover:text-white'
+                        }`}
+                >
+                    <span className="text-xs uppercase tracking-widest font-medium">
+                        Go to collection
+                    </span>
+                    <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" />
+                </div>
+            </div>
+        </Link>
+    );
+}
+
 export default function CategoryPage() {
     return (
         <div className="min-h-screen bg-[#F5F1ED] font-sans selection:bg-black selection:text-white pt-32 pb-20 px-6 md:px-12">
@@ -79,52 +211,8 @@ export default function CategoryPage() {
 
                 {/* 3-Column Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                    {categories.map((category) => (
-                        <Link
-                            key={category.id}
-                            href={`/category/${category.id}`}
-                            className="group relative bg-white overflow-hidden transition-all duration-500 hover:shadow-2xl"
-                            style={{ aspectRatio: '3/4' }}
-                        >
-                            {/* Background Image - Hidden by default, revealed on hover */}
-                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                                <Image
-                                    src={category.image}
-                                    alt={category.title}
-                                    fill
-                                    className="object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                            </div>
-
-                            {/* Content */}
-                            <div className="relative h-full flex flex-col justify-between p-8 md:p-10">
-                                {/* Subtitle */}
-                                <div>
-                                    <p className="text-[10px] md:text-xs text-slate-400 group-hover:text-white/80 uppercase tracking-widest mb-8 transition-colors duration-500">
-                                        {category.subtitle}
-                                    </p>
-                                </div>
-
-                                {/* Title */}
-                                <div className="flex-1 flex items-center">
-                                    <h2
-                                        className="text-3xl md:text-4xl lg:text-5xl font-light text-slate-900 group-hover:text-white leading-tight transition-colors duration-500 break-words"
-                                        style={{ fontFamily: 'Georgia, serif' }}
-                                    >
-                                        {category.title}
-                                    </h2>
-                                </div>
-
-                                {/* Link */}
-                                <div className="flex items-center gap-2 text-slate-600 group-hover:text-white transition-colors duration-500">
-                                    <span className="text-xs uppercase tracking-widest font-medium">
-                                        Go to collection
-                                    </span>
-                                    <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" />
-                                </div>
-                            </div>
-                        </Link>
+                    {categories.map((category, index) => (
+                        <CategoryCard key={category.id} category={category} index={index} />
                     ))}
                 </div>
             </div>
