@@ -77,8 +77,8 @@ export default function AboutPage() {
 
                     {/* Mission Statement & Scroll Circle */}
                     <div className="col-span-12 mt-12 md:mt-0 flex flex-col md:flex-row items-start md:items-end justify-between">
-                        <div className="max-w-2xl w-full">
-                            <p className="text-2xl md:text-3xl font-medium text-slate-800 leading-tight max-w-full break-words">
+                        <div className="w-full md:max-w-2xl">
+                            <p className="text-3xl md:text-3xl font-medium text-slate-900 md:text-slate-800 leading-tight">
                                 Our mission is to turn your dreams into reality, one pixel at a time. With a diverse team of designers, developers, and innovators, we're constantly pushing the boundaries of what's possible in the digital world.
                             </p>
                         </div>
