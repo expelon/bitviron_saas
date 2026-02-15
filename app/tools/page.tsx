@@ -86,7 +86,7 @@ export default function ToolsPage() {
                     <div className="col-span-12 lg:col-span-9">
                         <div className="flex items-center gap-3 mb-8">
                             <span className="w-12 h-[1px] bg-black"></span>
-                            <span className="text-xs font-bold uppercase tracking-[0.3em] font-mono">Precision Utilities</span>
+                            <span className="text-xs font-bold uppercase tracking-[0.3em] font-mono">Precision Utilities // {new Date().getFullYear()}</span>
                         </div>
                         <h1 className="text-6xl md:text-[10vw] font-bold leading-[0.85] tracking-tighter uppercase text-black">
                             The Bitviron<br />Product Suite.
@@ -168,7 +168,7 @@ export default function ToolsPage() {
                         <span className="flex items-center gap-2"><Cpu className="w-3 h-3" /> Core: Active</span>
                         <span className="flex items-center gap-2"><Terminal className="w-3 h-3" /> Status: Verified</span>
                     </div>
-                    <span>Bitviron Multi-Tool Ecosystem © 2024</span>
+                    <span>Bitviron Multi-Tool Ecosystem © {new Date().getFullYear()}</span>
                     <div className="flex gap-12">
                         <span>Latency: 12ms</span>
                         <span>Uptime: 99.9%</span>
