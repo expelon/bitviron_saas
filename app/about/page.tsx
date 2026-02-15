@@ -176,15 +176,19 @@ export default function AboutPage() {
                         </p>
                     </div>
 
-                    {/* Horizontal Carousel Container */}
-                    <div className="relative group overflow-hidden">
-                        <div className="flex gap-4 md:gap-6 overflow-x-auto pt-20 pb-12 scrollbar-hide no-scrollbar cursor-grab active:cursor-grabbing snap-x">
+                    {/* Team Members List */}
+                    <div className="relative group overflow-x-clip">
+                        <div className="flex flex-col md:flex-row gap-16 md:gap-6 md:overflow-x-auto pt-20 pb-12 md:scrollbar-hide md:no-scrollbar cursor-default md:cursor-grab active:md:cursor-grabbing snap-y md:snap-x items-center md:items-start">
                             {team.map((member, index) => (
                                 <div
                                     key={index}
-                                    className={`flex-shrink-0 flex flex-col items-center group/member snap-start transition-transform duration-700 ${index % 2 !== 0 ? '-translate-y-14' : 'translate-y-0'}`}
+                                    className={`flex-shrink-0 flex flex-col items-center group/member snap-center md:snap-start transition-all duration-700 
+                                        ${index % 2 !== 0
+                                            ? 'md:-translate-y-14'
+                                            : ''
+                                        }`}
                                 >
-                                    <div className="w-[130px] h-[130px] md:w-[210px] md:h-[210px] rounded-full overflow-hidden mb-6 grayscale hover:grayscale-0 transition-all duration-700 bg-slate-100">
+                                    <div className="w-[200px] h-[200px] md:w-[210px] md:h-[210px] rounded-full overflow-hidden mb-6 grayscale hover:grayscale-0 transition-all duration-700 bg-slate-100">
                                         <Image
                                             src={member.image}
                                             alt={member.name}
@@ -194,10 +198,10 @@ export default function AboutPage() {
                                         />
                                     </div>
                                     <div className="text-center">
-                                        <h4 className="text-sm md:text-base font-bold text-slate-900 mb-1">
+                                        <h4 className="text-lg md:text-base font-bold text-slate-900 mb-1">
                                             {member.name}
                                         </h4>
-                                        <p className="text-[10px] md:text-xs text-slate-400 font-medium uppercase tracking-widest">
+                                        <p className="text-xs md:text-xs text-slate-400 font-medium uppercase tracking-widest">
                                             {member.role}
                                         </p>
                                     </div>
