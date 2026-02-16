@@ -14,6 +14,9 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
     title: "Bitviron | Digital Tools Platform",
     description: "All-in-one digital workspace",
+    icons: {
+        icon: "/bitviron-logo.png",
+    },
 };
 
 export default function RootLayout({
