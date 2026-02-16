@@ -35,25 +35,25 @@ const team = [
     },
     {
         name: "Sreelakshmi",
-        role: "Creative Director",
+        role: "Creative Associate",
         image: "/creative-director.webp",
         order: "order-2 md:order-4"
     },
     {
-        name: "Dianne Russell",
+        name: "Renitto",
         role: "Product Designer",
         image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2574&auto=format&fit=crop",
         order: "order-5 md:order-1"
     },
     {
         name: "Anamika",
-        role: "Team Member",
+        role: "Growth Executive",
         image: "/anamika.webp",
         order: "order-4 md:order-2"
     },
     {
         name: "Rijas",
-        role: "Team Member",
+        role: "Product Designer",
         image: "/rijas.webp",
         order: "order-3 md:order-5"
     }
