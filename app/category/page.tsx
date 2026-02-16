@@ -8,6 +8,12 @@ import { ArrowRight } from 'lucide-react';
 // Category data - Tool categories for Bitviron
 const categories = [
     {
+        id: 'pdf-tools',
+        title: 'PDF Tools',
+        subtitle: 'DOCUMENT & PDF UTILITIES',
+        image: 'https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?q=80&w=2670&auto=format&fit=crop'
+    },
+    {
         id: 'ai-tools',
         title: 'AI Tools',
         subtitle: 'ARTIFICIAL INTELLIGENCE',
@@ -138,8 +144,8 @@ function CategoryCard({ category, index }: { category: typeof categories[0]; ind
             {/* Background Image - Center card only on mobile, hover on desktop */}
             <div
                 className={`absolute inset-0 transition-opacity duration-700 ${isMobile
-                        ? (isVisible ? 'opacity-100' : 'opacity-0')
-                        : 'opacity-0 group-hover:opacity-100'
+                    ? (isVisible ? 'opacity-100' : 'opacity-0')
+                    : 'opacity-0 group-hover:opacity-100'
                     }`}
             >
                 <Image
@@ -157,8 +163,8 @@ function CategoryCard({ category, index }: { category: typeof categories[0]; ind
                 <div>
                     <p
                         className={`text-[10px] md:text-xs uppercase tracking-widest mb-8 transition-colors duration-500 ${isMobile
-                                ? (isVisible ? 'text-white/80' : 'text-slate-400')
-                                : 'text-slate-400 group-hover:text-white/80'
+                            ? (isVisible ? 'text-white/80' : 'text-slate-400')
+                            : 'text-slate-400 group-hover:text-white/80'
                             }`}
                     >
                         {category.subtitle}
@@ -169,8 +175,8 @@ function CategoryCard({ category, index }: { category: typeof categories[0]; ind
                 <div className="flex-1 flex items-center">
                     <h2
                         className={`text-3xl md:text-4xl lg:text-5xl font-light leading-tight transition-colors duration-500 break-words ${isMobile
-                                ? (isVisible ? 'text-white' : 'text-slate-900')
-                                : 'text-slate-900 group-hover:text-white'
+                            ? (isVisible ? 'text-white' : 'text-slate-900')
+                            : 'text-slate-900 group-hover:text-white'
                             }`}
                         style={{ fontFamily: 'Georgia, serif' }}
                     >
@@ -181,8 +187,8 @@ function CategoryCard({ category, index }: { category: typeof categories[0]; ind
                 {/* Link */}
                 <div
                     className={`flex items-center gap-2 transition-colors duration-500 ${isMobile
-                            ? (isVisible ? 'text-white' : 'text-slate-600')
-                            : 'text-slate-600 group-hover:text-white'
+                        ? (isVisible ? 'text-white' : 'text-slate-600')
+                        : 'text-slate-600 group-hover:text-white'
                         }`}
                 >
                     <span className="text-xs uppercase tracking-widest font-medium">
