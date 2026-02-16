@@ -43,19 +43,19 @@ const team = [
         name: "Dianne Russell",
         role: "Product Designer",
         image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2574&auto=format&fit=crop",
-        order: "order-3 md:order-1"
+        order: "order-5 md:order-1"
     },
     {
-        name: "Courtney Henry",
-        role: "UX Researcher & Copywriter",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2574&auto=format&fit=crop",
+        name: "Anamika",
+        role: "Team Member",
+        image: "/anamika.webp",
         order: "order-4 md:order-2"
     },
     {
-        name: "Guy Hawkins",
-        role: "Technical Lead",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2574&auto=format&fit=crop",
-        order: "order-5 md:order-5"
+        name: "Rijas",
+        role: "Team Member",
+        image: "/rijas.webp",
+        order: "order-3 md:order-5"
     }
 ];
 
