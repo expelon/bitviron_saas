@@ -65,23 +65,23 @@ export default function AboutPage() {
             <div className="max-w-[1600px] mx-auto px-8 md:px-12">
 
                 {/* Hero Section */}
-                <div className="grid grid-cols-12 gap-8 mb-32 md:mb-48 relative">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-32 md:mb-48 relative">
                     {/* Main Title */}
-                    <div className="col-span-12 md:col-span-8">
+                    <div className="md:col-span-8">
                         <h1 className="text-5xl md:text-[10vw] font-bold text-slate-900 leading-[0.9] tracking-tighter mb-12 md:mb-16 break-words">
                             About Our<br />Platform.
                         </h1>
                     </div>
 
                     {/* Secondary Info (Top Right) */}
-                    <div className="col-span-12 md:col-span-3 md:col-start-10 flex flex-col justify-start">
+                    <div className="md:col-span-3 md:col-start-10 flex flex-col justify-start">
                         <p className="text-sm md:text-base text-slate-500 font-medium leading-relaxed max-w-[280px]">
                             Bitviron is a modern AI tools directory and online utility platform built to enhance digital productivity and simplify everyday workflows.
                         </p>
                     </div>
 
                     {/* Mission Statement & Scroll Circle */}
-                    <div className="col-span-12 mt-8 md:mt-0 flex flex-col md:flex-row items-start md:items-end justify-between">
+                    <div className="md:col-span-12 mt-8 md:mt-0 flex flex-col md:flex-row items-start md:items-end justify-between">
                         <div className="w-full md:max-w-2xl">
                             <p className="text-lg md:text-3xl font-medium text-slate-900 md:text-slate-800 leading-tight">
                                 Our mission is to simplify digital productivity by developing powerful online utility tools and curating reliable AI tools that help individuals and businesses streamline workflows, automate tasks, and improve efficiency in today’s fast-evolving digital landscape.
@@ -98,11 +98,11 @@ export default function AboutPage() {
                 </div>
 
                 {/* Image Grid Section */}
-                <div className="grid grid-cols-12 gap-4 md:gap-6 mb-32 md:mb-48">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 mb-32 md:mb-48">
                     {images.map((img) => (
                         <div
                             key={img.id}
-                            className={`relative h-[60vh] overflow-hidden ${img.width}`}
+                            className={`relative h-[40vh] md:h-[60vh] overflow-hidden ${img.width}`}
                         >
                             <Image
                                 src={img.src}
