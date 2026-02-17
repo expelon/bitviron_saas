@@ -117,7 +117,7 @@ export default function AboutPage() {
 
                 {/* Vision Section */}
                 <div className="mb-32 md:mb-48">
-                    <p className="text-xl md:text-5xl font-medium text-slate-900 leading-tight max-w-5xl">
+                    <p className="text-lg md:text-3xl font-medium text-slate-900 md:text-slate-800 leading-tight max-w-2xl">
                         Founded with a vision to improve digital productivity, Bitviron has evolved into a modern AI tools and online utilities platform dedicated to simplifying workflows and delivering practical, time-saving solutions.
                     </p>
                 </div>
