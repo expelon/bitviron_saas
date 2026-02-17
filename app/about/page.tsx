@@ -81,9 +81,9 @@ export default function AboutPage() {
                     </div>
 
                     {/* Mission Statement & Scroll Circle */}
-                    <div className="col-span-12 mt-12 md:mt-0 flex flex-col md:flex-row items-start md:items-end justify-between">
+                    <div className="col-span-12 mt-8 md:mt-0 flex flex-col md:flex-row items-start md:items-end justify-between">
                         <div className="w-full md:max-w-2xl">
-                            <p className="text-3xl md:text-3xl font-medium text-slate-900 md:text-slate-800 leading-tight">
+                            <p className="text-lg md:text-3xl font-medium text-slate-900 md:text-slate-800 leading-tight">
                                 Our mission is to simplify digital productivity by developing powerful online utility tools and curating reliable AI tools that help individuals and businesses streamline workflows, automate tasks, and improve efficiency in today’s fast-evolving digital landscape.
                             </p>
                         </div>
@@ -117,14 +117,14 @@ export default function AboutPage() {
 
                 {/* Vision Section */}
                 <div className="mb-32 md:mb-48">
-                    <p className="text-3xl md:text-5xl font-medium text-slate-900 leading-tight max-w-5xl">
+                    <p className="text-xl md:text-5xl font-medium text-slate-900 leading-tight max-w-5xl">
                         Founded with a vision to improve digital productivity, Bitviron has evolved into a modern AI tools and online utilities platform dedicated to simplifying workflows and delivering practical, time-saving solutions.
                     </p>
                 </div>
 
                 {/* "Who are we?" Section */}
                 <div className="mb-32 md:mb-48">
-                    <h2 className="text-6xl md:text-8xl font-bold text-slate-900 mb-20 tracking-tighter">
+                    <h2 className="text-4xl md:text-8xl font-bold text-slate-900 mb-12 md:mb-20 tracking-tighter">
                         Who are we?
                     </h2>
 
@@ -173,7 +173,7 @@ export default function AboutPage() {
                 {/* "Our Team" Section */}
                 <div className="mb-32 md:mb-48 relative">
                     <div className="mb-16">
-                        <h2 className="text-6xl md:text-8xl font-bold text-slate-900 tracking-tighter mb-6">
+                        <h2 className="text-4xl md:text-8xl font-bold text-slate-900 tracking-tighter mb-6">
                             Our Team
                         </h2>
                         <p className="text-lg md:text-xl text-slate-500 font-medium leading-relaxed max-w-2xl">
