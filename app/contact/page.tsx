@@ -6,41 +6,41 @@ import Image from 'next/image';
 const images = [
     {
         id: 1,
-        src: "https://images.unsplash.com/photo-1502323777036-f29e3972d82f?q=80&w=2670&auto=format&fit=crop", // Model
-        alt: "Studio Portrait 01",
-        height: "h-[150px] md:h-[220px]",
+        src: "/renitto.webp",
+        alt: "Renitto - Product Designer",
+        height: "h-[220px] md:h-[220px]",
         width: "md:w-[16vw]",
         number: "01"
     },
     {
         id: 2,
-        src: "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=2690&auto=format&fit=crop", // Model
-        alt: "Studio Portrait 02",
+        src: "/anamika.webp",
+        alt: "Anamika - Growth Executive",
         height: "h-[220px] md:h-[320px]",
         width: "md:w-[15vw]",
         number: "02"
     },
     {
         id: 3,
-        src: "https://images.unsplash.com/photo-1510227272981-87123e259b17?q=80&w=2574&auto=format&fit=crop", // Center Model
-        alt: "Studio Portrait 03",
+        src: "/founder.webp",
+        alt: "Shabin Vs - Founder | CEO",
         height: "h-[300px] md:h-[420px]",
         width: "md:w-[25vw]",
         number: "03"
     },
     {
         id: 4,
-        src: "https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?q=80&w=2574&auto=format&fit=crop", // Model
-        alt: "Studio Portrait 04",
+        src: "/creative-director.webp",
+        alt: "Sreelakshmi - Creative Associate",
         height: "h-[220px] md:h-[320px]",
         width: "md:w-[15vw]",
         number: "04"
     },
     {
         id: 5,
-        src: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2670&auto=format&fit=crop", // Model
-        alt: "Studio Portrait 05",
-        height: "h-[150px] md:h-[220px]",
+        src: "/rijas.webp",
+        alt: "Rijas - Product Designer",
+        height: "h-[220px] md:h-[220px]",
         width: "md:w-[16vw]",
         number: "05"
     }
