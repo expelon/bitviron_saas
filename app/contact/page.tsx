@@ -48,24 +48,52 @@ const images = [
 
 const faqs = [
     {
-        question: "How long does a project take?",
-        answer: "Each project's timeline depends on the scope. A simple landing page can be completed within 2 weeks while a full e-commerce platform might take 3 – 6 weeks. Once we understand your needs, we'll give you a clear, realistic timeline."
+        question: "What is Bitviron?",
+        answer: "Bitviron is a modern digital tools platform offering practical online utility tools and carefully curated AI tool listings. Our mission is to help creators, students, developers, and businesses solve everyday digital tasks faster and more efficiently."
     },
     {
-        question: "Can I manage a site after it's built?",
-        answer: "Yes, we build our sites using easy-to-use CMS platforms that allow you to manage and update your content without any technical knowledge. We also provide documentation and training to help you get started."
+        question: "Are the tools on Bitviron free to use?",
+        answer: "Most of our utility tools are completely free to use. In the future, some advanced features may be offered as premium options. Each tool page clearly states whether it is free or includes paid functionality. We believe in transparent pricing no hidden surprises."
     },
     {
-        question: "How does pricing work?",
-        answer: "Our pricing is tailored to the specific needs of each project. We offer competitive rates and transparent pricing models. We'll provide you with a detailed quote after we've discussed your requirements."
+        question: "Do you store or track uploaded files?",
+        answer: "User privacy is a top priority. Files uploaded to our tools (such as PDF or image utilities) are processed securely and are not permanently stored on our servers. Any temporary processing data is automatically deleted after completion. We do not use uploaded content for tracking or analytics."
     },
     {
-        question: "What tools are used in building?",
-        answer: "We use a variety of state-of-the-art tools and technologies to build high-performance websites and applications. Our stack includes React, Next.js, Tailwind CSS, and other modern frameworks."
+        question: "How do you select AI tools for listing?",
+        answer: "We review AI tools based on functionality, reliability, real-world usefulness, and overall quality. Instead of listing every available tool, we focus on adding solutions that genuinely help users improve productivity and workflow. Quality always comes before quantity."
     },
     {
-        question: "How much does it cost to build an app?",
-        answer: "The cost of building an app varies depending on its complexity and features. We'll work with you to understand your goals and budget, and provide you with a comprehensive proposal."
+        question: "Can I submit my AI tool to Bitviron?",
+        answer: "Yes. If you’ve built an AI tool or digital product, you can submit it for review. After evaluation, approved tools are added to our listings. We welcome innovative and problem-solving tools that align with our platform’s vision."
+    },
+    {
+        question: "How often are tools updated?",
+        answer: "Bitviron is actively maintained and updated. We regularly add new AI tools, refine listings, and improve our utility features to ensure the platform remains relevant and useful. Digital tools evolve quickly — and so do we."
+    },
+    {
+        question: "Is Bitviron suitable for businesses?",
+        answer: "Yes. Bitviron is built for individuals, startups, and growing businesses that want to improve productivity, streamline workflows, and simplify everyday digital operations. Whether you're managing documents, exploring AI tools, or automating small tasks, our platform is designed to save time and reduce complexity."
+    },
+    {
+        question: "Do I need to create an account?",
+        answer: "No account is required to use most of our tools. We focus on fast, frictionless access. Optional accounts may be introduced in the future for advanced features, saved preferences, or premium utilities but core tools will remain easily accessible."
+    },
+    {
+        question: "How is Bitviron different from other AI directories?",
+        answer: "Bitviron goes beyond simple AI tool listings. Alongside curated AI recommendations, we develop and maintain our own in-house digital utility tools. Instead of listing hundreds of tools without context, we prioritize clarity, real-world usefulness, and structured comparisons. Our goal is to create a focused productivity platform not just another directory."
+    },
+    {
+        question: "How can I report a broken tool?",
+        answer: "If you encounter a broken link, outdated listing, or inaccurate information, you can report it through our Contact page. Please include the tool name and issue details. We review reports promptly and keep the platform clean, updated, and reliable."
+    },
+    {
+        question: "Can I request a new feature?",
+        answer: "Yes. We actively welcome suggestions from our users. If there’s a tool you’d like us to build or an AI product you believe should be listed, reach out through our Contact page. Bitviron evolves based on community input and practical needs."
+    },
+    {
+        question: "Is Bitviron constantly evolving?",
+        answer: "Absolutely. The digital tools landscape changes rapidly, and so do we. We regularly add new AI tools, refine existing listings, and enhance our utilities to ensure the platform remains modern and useful. Our long-term vision is continuous improvement not static growth."
     }
 ];
 
