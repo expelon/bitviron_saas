@@ -89,7 +89,7 @@ export default function ContactPage() {
                         Connect With
                     </h1>
                     <h1 className="text-5xl md:text-8xl font-black text-slate-900 tracking-tighter uppercase">
-                        Our Studio
+                        Bitviron
                     </h1>
                 </div>
 
