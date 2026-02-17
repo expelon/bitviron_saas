@@ -104,9 +104,9 @@ export default function ContactPage() {
         <div className="min-h-screen bg-[#FDFDFD] overflow-hidden relative font-sans selection:bg-black selection:text-white pt-32 pb-20">
 
             {/* Background Text Overlay */}
-            <div className="absolute top-[20%] -translate-y-1/2 left-0 w-full flex justify-center pointer-events-none select-none z-0">
-                <h1 className="text-[18vw] font-[1000] text-slate-900/[0.05] uppercase tracking-tighter leading-none scale-y-110">
-                    TheStudio
+            <div className="absolute top-[15%] -translate-y-1/2 left-0 w-full flex justify-center pointer-events-none select-none z-0">
+                <h1 className="text-[20vw] font-[1000] text-slate-900/[0.05] uppercase tracking-tighter leading-none scale-y-110">
+                    BITVIRON
                 </h1>
             </div>
 
@@ -189,10 +189,10 @@ export default function ContactPage() {
 
                 {/* New Form Section */}
                 <div className="relative mb-16 md:mb-24">
-                    {/* Background Text for Section - "STUDIO" */}
-                    <div className="absolute top-[20%] -translate-y-1/2 left-0 w-full pointer-events-none select-none z-0">
-                        <h1 className="text-[20vw] font-[1000] text-slate-900/[0.04] uppercase tracking-tighter leading-none scale-y-110 ml-[-5%]">
-                            Studio
+                    {/* Background Text for Section - "BITVIRON" */}
+                    <div className="hidden md:block absolute top-[10%] -translate-y-1/2 left-0 w-full pointer-events-none select-none z-0">
+                        <h1 className="text-[15vw] font-[1000] text-slate-900/[0.04] uppercase tracking-tighter leading-none scale-y-110 ml-[-5%]">
+                            BITVIRON
                         </h1>
                     </div>
 
@@ -200,7 +200,7 @@ export default function ContactPage() {
                         {/* Left side text (Moved to bottom) */}
                         <div className="max-w-xs pb-4">
                             <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-900 leading-relaxed">
-                                Bitviron is a powerhouse for digital creators and developers. We build tools that streamline your workflow and elevate your creative process. Reach out to discuss collaborations or custom digital solutions.
+                                Bitviron is a modern platform for creators, developers, and businesses. We provide tools that simplify workflows and improve everyday digital productivity. Reach out for feedback or collaborations.
                             </p>
                         </div>
 
