@@ -75,7 +75,7 @@ export default function AboutPage() {
 
                     {/* Secondary Info (Top Right) */}
                     <div className="col-span-12 md:col-span-3 md:col-start-10 flex flex-col justify-start">
-                        <p className="text-sm md:text-base text-slate-500 font-medium leading-relaxed max-w-[280px] pr-4 md:pr-0">
+                        <p className="text-sm md:text-base text-slate-500 font-medium leading-relaxed max-w-[280px]">
                             Bitviron is a modern AI tools directory and online utility platform built to enhance digital productivity and simplify everyday workflows.
                         </p>
                     </div>
@@ -83,7 +83,7 @@ export default function AboutPage() {
                     {/* Mission Statement & Scroll Circle */}
                     <div className="col-span-12 mt-8 md:mt-0 flex flex-col md:flex-row items-start md:items-end justify-between">
                         <div className="w-full md:max-w-2xl">
-                            <p className="text-lg md:text-3xl font-medium text-slate-900 md:text-slate-800 leading-tight pr-6 md:pr-0">
+                            <p className="text-lg md:text-3xl font-medium text-slate-900 md:text-slate-800 leading-tight">
                                 Our mission is to simplify digital productivity by developing powerful online utility tools and curating reliable AI tools that help individuals and businesses streamline workflows, automate tasks, and improve efficiency in today’s fast-evolving digital landscape.
                             </p>
                         </div>
@@ -117,7 +117,7 @@ export default function AboutPage() {
 
                 {/* Vision Section */}
                 <div className="mb-32 md:mb-48">
-                    <p className="text-lg md:text-3xl font-medium text-slate-900 md:text-slate-800 leading-tight max-w-2xl pr-6 md:pr-0">
+                    <p className="text-lg md:text-3xl font-medium text-slate-900 md:text-slate-800 leading-tight max-w-2xl">
                         Founded with a vision to improve digital productivity, Bitviron has evolved into a modern AI tools and online utilities platform dedicated to simplifying workflows and delivering practical, time-saving solutions.
                     </p>
                 </div>
