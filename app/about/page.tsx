@@ -42,7 +42,7 @@ const team = [
     {
         name: "Renitto",
         role: "Product Designer",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2574&auto=format&fit=crop",
+        image: "/renitto.webp",
         order: "order-5 md:order-1"
     },
     {
