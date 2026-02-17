@@ -69,14 +69,14 @@ export default function AboutPage() {
                     {/* Main Title */}
                     <div className="col-span-12 md:col-span-8">
                         <h1 className="text-5xl md:text-[10vw] font-bold text-slate-900 leading-[0.9] tracking-tighter mb-12 md:mb-16 break-words">
-                            About our<br />agency.
+                            About Our<br />Platform.
                         </h1>
                     </div>
 
                     {/* Secondary Info (Top Right) */}
                     <div className="col-span-12 md:col-span-3 md:col-start-10 flex flex-col justify-start">
                         <p className="text-sm md:text-base text-slate-500 font-medium leading-relaxed max-w-[280px]">
-                            Based in the vibrant heart of the digital landscape, Bitviron is not just a tools platform; we're your partners in creation.
+                            Bitviron is a modern AI tools directory and online utility platform built to enhance digital productivity and simplify everyday workflows.
                         </p>
                     </div>
 
@@ -84,7 +84,7 @@ export default function AboutPage() {
                     <div className="col-span-12 mt-12 md:mt-0 flex flex-col md:flex-row items-start md:items-end justify-between">
                         <div className="w-full md:max-w-2xl">
                             <p className="text-3xl md:text-3xl font-medium text-slate-900 md:text-slate-800 leading-tight">
-                                Our mission is to turn your dreams into reality, one pixel at a time. With a diverse team of designers, developers, and innovators, we're constantly pushing the boundaries of what's possible in the digital world.
+                                Our mission is to simplify digital productivity by developing powerful online utility tools and curating reliable AI tools that help individuals and businesses streamline workflows, automate tasks, and improve efficiency in today’s fast-evolving digital landscape.
                             </p>
                         </div>
 
@@ -118,7 +118,7 @@ export default function AboutPage() {
                 {/* Vision Section */}
                 <div className="mb-32 md:mb-48">
                     <p className="text-3xl md:text-5xl font-medium text-slate-900 leading-tight max-w-5xl">
-                        Founded with a vision to redefine design through a modern and friendly lens, we've become more than just a design agency; we're a community of kindred spirits who share a passion for artistry and innovation.
+                        Founded with a vision to improve digital productivity, Bitviron has evolved into a modern AI tools and online utilities platform dedicated to simplifying workflows and delivering practical, time-saving solutions.
                     </p>
                 </div>
 
@@ -133,13 +133,13 @@ export default function AboutPage() {
                         <div className="space-y-32">
                             <div className="max-w-xs">
                                 <p className="text-base text-slate-500 font-medium leading-relaxed">
-                                    We're the designers who believe in the power of a warm smile and a friendly chat.
+                                    We’re a productivity-focused platform dedicated to helping creators, developers, and businesses simplify digital work through reliable tools and AI solutions.
                                 </p>
                             </div>
 
                             <div className="max-w-xs">
                                 <p className="text-base text-slate-400 font-medium leading-relaxed">
-                                    Ready to build unforgettable brands, Bitviron Studio.
+                                    Building the future of digital efficiency.
                                 </p>
                             </div>
                         </div>
@@ -148,13 +148,13 @@ export default function AboutPage() {
                         <div className="space-y-16">
                             <div className="max-w-xl">
                                 <p className="text-xl md:text-2xl text-slate-800 font-medium leading-relaxed">
-                                    We thrive on turning your wildest design aspirations into stunning realities. At Bitviron, every project is a collaboration, every client is a friend, and every design is a work of art crafted with care and enthusiasm.
+                                    We are committed to advancing digital productivity through innovation, smart technology, and user-focused solutions. At Bitviron, every improvement enhances efficiency, strengthens performance, and supports modern online workflows.
                                 </p>
                             </div>
 
                             <div className="max-w-xl">
                                 <p className="text-lg md:text-xl text-slate-800 font-medium leading-relaxed">
-                                    We're here to make your design dreams come true.
+                                    We're here to power your digital productivity.
                                 </p>
                             </div>
 
@@ -177,7 +177,7 @@ export default function AboutPage() {
                             Our Team
                         </h2>
                         <p className="text-lg md:text-xl text-slate-500 font-medium leading-relaxed max-w-2xl">
-                            Our team is a tight-knit family of designers, artists, and visionaries, all bound by the same creative enthusiasm.
+                            Our team consists of developers, technology specialists, and innovators committed to advancing digital productivity and intelligent platform development.
                         </p>
                     </div>
 
@@ -221,7 +221,7 @@ export default function AboutPage() {
                     <div className="bg-black py-32 md:py-48 px-8 md:px-12 flex flex-col md:flex-row items-center justify-between gap-16">
                         <div className="max-w-4xl">
                             <h2 className="text-5xl md:text-8xl font-bold text-white leading-[0.9] tracking-tighter">
-                                Let's talk today, and turn your ideas into digital masterpieces.
+                                Let’s connect today and build smarter digital solutions together.
                             </h2>
                         </div>
 
