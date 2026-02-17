@@ -98,23 +98,23 @@ export default function ContactPage() {
                     {images.map((img) => (
                         <div
                             key={img.id}
-                            className={`relative group cursor-pointer transition-all duration-700 ease-out hover:-translate-y-4`}
+                            className={`relative group cursor-pointer transition-all duration-700 ease-out md:hover:-translate-y-4`}
                         >
                             <div className="text-center mb-4 opacity-100 transition-opacity duration-300">
                                 <span className="text-xs font-bold tracking-widest text-slate-900">{img.number}</span>
                             </div>
 
-                            <div className={`relative w-[80vw] ${img.width} max-w-[500px] ${img.height} overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] shadow-2xl shadow-slate-200`}>
+                            <div className={`relative w-[80vw] ${img.width} max-w-[500px] ${img.height} overflow-hidden grayscale md:hover:grayscale-0 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] shadow-2xl shadow-slate-200`}>
                                 <Image
                                     src={img.src}
                                     alt={img.alt}
                                     fill
-                                    className="object-cover object-center transform scale-110 group-hover:scale-100 transition-transform duration-1000"
+                                    className="object-cover object-center transform md:scale-110 md:group-hover:scale-100 transition-transform duration-1000"
                                     sizes="(max-width: 768px) 100vw, 33vw"
                                 />
 
                                 {/* Overlay on hover */}
-                                <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                <div className="absolute inset-0 bg-black/10 opacity-0 md:group-hover:opacity-100 transition-opacity duration-500"></div>
                             </div>
                         </div>
                     ))}
