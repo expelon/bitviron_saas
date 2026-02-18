@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import {
     ArrowUpRight,
     Search,
@@ -13,65 +14,99 @@ import {
     Scissors,
     MousePointer2,
     Terminal,
-    Cpu
+    Cpu,
+    FileText
 } from 'lucide-react';
 
 // Tool data mapped from internal constants but formatted for premium showcase
-const products = [
+const tools = [
+    {
+        id: 'pdf-merger',
+        name: 'Merge PDF',
+        description: 'Orchestrate multiple PDF data streams into a singular, unified document structure.',
+        tag: 'DOCUMENT CORE',
+        icon: <FileText className="w-8 h-8 text-red-600" />,
+        version: 'v4.4',
+        href: '/tools/pdf-merger'
+    },
     {
         id: 'ai-summarizer',
-        name: 'Bitviron Intelligence',
+        name: 'AI Intelligence',
         description: 'Advanced neural processing for real-time text summarization and semantic analysis.',
         tag: 'AI ENGINE',
         icon: <Sparkles className="w-8 h-8 text-blue-600" />,
-        version: 'v2.1'
+        version: 'v2.1',
+        href: '#'
     },
     {
         id: 'json-formatter',
-        name: 'Bitviron Developer Kit',
+        name: 'JSON Developer Kit',
         description: 'High-performance JSON orchestration, validation, and schema optimization.',
         tag: 'SYSTEM CORE',
         icon: <FileJson className="w-8 h-8 text-black" />,
-        version: 'v1.4'
+        version: 'v1.4',
+        href: '#'
     },
     {
         id: 'password-gen',
-        name: 'Bitviron Vault',
+        name: 'Vault Security',
         description: 'Cryptographically secure entropy generation for high-level asset protection.',
         tag: 'SECURITY',
         icon: <ShieldCheck className="w-8 h-8 text-green-600" />,
-        version: 'v3.0'
+        version: 'v3.0',
+        href: '#'
+    },
+    {
+        id: 'pdf-split',
+        name: 'Split PDF',
+        description: 'Extract specific pages or split documents into separate PDF files with precision.',
+        tag: 'DOCUMENT CORE',
+        icon: <Scissors className="w-8 h-8 text-orange-600" />,
+        version: 'v1.4',
+        href: '#'
     },
     {
         id: 'case-converter',
-        name: 'Bitviron Text Engine',
+        name: 'Text Engine',
         description: 'Precision typography and string manipulation for rapid content formatting.',
         tag: 'UTILITY',
         icon: <CaseUpper className="w-8 h-8 text-orange-600" />,
-        version: 'v1.2'
+        version: 'v1.2',
+        href: '#'
+    },
+    {
+        id: 'pdf-compress',
+        name: 'Compress PDF',
+        description: 'Reduce file size while maintaining document integrity for efficient sharing.',
+        tag: 'OPTIMIZATION',
+        icon: <Cpu className="w-8 h-8 text-cyan-600" />,
+        version: 'v3.0',
+        href: '#'
     },
     {
         id: 'svg-optimizer',
-        name: 'Bitviron Graphics SDK',
+        name: 'Graphics SDK',
         description: 'Lossless vector optimization and geometric simplification for web assets.',
-        tag: 'VISUAL',
+        tag: 'VISUAL CONTENT',
         icon: <Scissors className="w-8 h-8 text-pink-600" />,
-        version: 'v2.5'
+        version: 'v2.5',
+        href: '#'
     },
     {
-        id: 'url-encoder',
-        name: 'Bitviron Network Tools',
-        description: 'Safe transport encoding for complex URI structures and API integration.',
-        tag: 'PROTOCOL',
-        icon: <Hash className="w-8 h-8 text-purple-600" />,
-        version: 'v1.1'
+        id: 'word-to-pdf',
+        name: 'Conversion Lab',
+        description: 'Transform diverse document formats into professional, secure PDF assets.',
+        tag: 'CONVERSION',
+        icon: <ArrowUpRight className="w-8 h-8 text-purple-600" />,
+        version: 'v2.5',
+        href: '#'
     }
 ];
 
 export default function ToolsPage() {
     const [searchQuery, setSearchQuery] = useState('');
 
-    const filtered = products.filter(p =>
+    const filtered = tools.filter(p =>
         p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         p.tag.toLowerCase().includes(searchQuery.toLowerCase())
     );
@@ -89,15 +124,15 @@ export default function ToolsPage() {
                             <span className="text-xs font-bold uppercase tracking-[0.3em] font-mono">Precision Utilities // {new Date().getFullYear()}</span>
                         </div>
                         <h1 className="text-6xl md:text-[10vw] font-bold leading-[0.85] tracking-tighter uppercase text-black">
-                            The Bitviron<br />Product Suite.
+                            Bitviron<br />Utility Core.
                         </h1>
                     </div>
 
                     <div className="col-span-12 lg:col-span-3 flex flex-col justify-end lg:items-end text-left lg:text-right">
                         <div className="max-w-xs space-y-6">
                             <p className="text-sm font-medium text-slate-500 leading-relaxed uppercase font-mono">
-                                [ Native ecosystem ]<br />
-                                High-performance modules engineered for professional-grade workflows.
+                                [ System utilities ]<br />
+                                High-performance modules engineered for professional-grade document and data orchestration.
                             </p>
 
                             <div className="relative group">
@@ -149,14 +184,14 @@ export default function ToolsPage() {
                             </div>
 
                             <div className="pt-12 text-black">
-                                <button className="flex items-center gap-4 group/btn">
+                                <Link href={product.href} className="flex items-center gap-4 group/btn inline-flex">
                                     <span className="text-xs font-bold uppercase tracking-widest border-b border-transparent group-hover/btn:border-black transition-all">
-                                        Launch Module
+                                        Open Tool
                                     </span>
                                     <div className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center group-hover/btn:bg-black group-hover/btn:text-white transition-all duration-300 transform group-hover/btn:rotate-45">
                                         <ArrowUpRight className="w-5 h-5" />
                                     </div>
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     ))}
@@ -165,13 +200,13 @@ export default function ToolsPage() {
                 {/* Technical Footer Decoration */}
                 <div className="mt-40 pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6 opacity-30 select-none pointer-events-none font-mono text-[10px] uppercase tracking-widest">
                     <div className="flex gap-12">
-                        <span className="flex items-center gap-2"><Cpu className="w-3 h-3" /> Core: Active</span>
-                        <span className="flex items-center gap-2"><Terminal className="w-3 h-3" /> Status: Verified</span>
+                        <span className="flex items-center gap-2"><Cpu className="w-3 h-3" /> System: Stable</span>
+                        <span className="flex items-center gap-2"><Terminal className="w-3 h-3" /> Encryption: AES-256</span>
                     </div>
-                    <span>Bitviron Multi-Tool Ecosystem © {new Date().getFullYear()}</span>
+                    <span>Bitviron Core © {new Date().getFullYear()}</span>
                     <div className="flex gap-12">
-                        <span>Latency: 12ms</span>
-                        <span>Uptime: 99.9%</span>
+                        <span>Latency: 4ms</span>
+                        <span>Active Modules: {tools.length}</span>
                     </div>
                 </div>
 

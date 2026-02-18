@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import {
     ArrowUpRight,
     Search,
@@ -149,14 +150,17 @@ export default function PdfToolsPage() {
                             </div>
 
                             <div className="pt-12 text-black">
-                                <button className="flex items-center gap-4 group/btn">
+                                <Link
+                                    href={tool.id === 'pdf-merger' ? '/tools/pdf-merger' : `/tools/${tool.id}`}
+                                    className="flex items-center gap-4 group/btn"
+                                >
                                     <span className="text-xs font-bold uppercase tracking-widest border-b border-transparent group-hover/btn:border-black transition-all">
                                         Open Tool
                                     </span>
                                     <div className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center group-hover/btn:bg-black group-hover/btn:text-white transition-all duration-300 transform group-hover/btn:rotate-45">
                                         <ArrowUpRight className="w-5 h-5" />
                                     </div>
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     ))}
