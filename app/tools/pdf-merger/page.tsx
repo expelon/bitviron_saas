@@ -22,7 +22,8 @@ import {
     HelpCircle,
     ChevronRight,
     Cpu,
-    Terminal
+    Terminal,
+    CreditCard
 } from 'lucide-react';
 import { PDFDocument } from 'pdf-lib';
 // pdfjs-dist will be imported dynamically to avoid SSR issues
@@ -485,7 +486,7 @@ export default function PdfMergePage() {
                         description="End-to-end local processing. Your data never leaves the client-side execution environment."
                     />
                     <FeatureCard
-                        icon={<Zap className="w-6 h-6 text-black" />}
+                        icon={<CreditCard className="w-6 h-6 text-black" />}
                         title="Zero Cost Tier"
                         description="Full access to the Bitviron merging engine with no subscription requirement or usage caps."
                     />

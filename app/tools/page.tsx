@@ -30,76 +30,13 @@ const tools = [
         href: '/tools/pdf-merger'
     },
     {
-        id: 'ai-summarizer',
-        name: 'AI Intelligence',
-        description: 'Advanced neural processing for real-time text summarization and semantic analysis.',
-        tag: 'AI ENGINE',
-        icon: <Sparkles className="w-8 h-8 text-blue-600" />,
-        version: 'v2.1',
-        href: '#'
-    },
-    {
-        id: 'json-formatter',
-        name: 'JSON Developer Kit',
-        description: 'High-performance JSON orchestration, validation, and schema optimization.',
-        tag: 'SYSTEM CORE',
-        icon: <FileJson className="w-8 h-8 text-black" />,
-        version: 'v1.4',
-        href: '#'
-    },
-    {
-        id: 'password-gen',
-        name: 'Vault Security',
-        description: 'Cryptographically secure entropy generation for high-level asset protection.',
-        tag: 'SECURITY',
-        icon: <ShieldCheck className="w-8 h-8 text-green-600" />,
-        version: 'v3.0',
-        href: '#'
-    },
-    {
         id: 'pdf-split',
         name: 'Split PDF',
         description: 'Extract specific pages or split documents into separate PDF files with precision.',
         tag: 'DOCUMENT CORE',
         icon: <Scissors className="w-8 h-8 text-orange-600" />,
         version: 'v1.4',
-        href: '#'
-    },
-    {
-        id: 'case-converter',
-        name: 'Text Engine',
-        description: 'Precision typography and string manipulation for rapid content formatting.',
-        tag: 'UTILITY',
-        icon: <CaseUpper className="w-8 h-8 text-orange-600" />,
-        version: 'v1.2',
-        href: '#'
-    },
-    {
-        id: 'pdf-compress',
-        name: 'Compress PDF',
-        description: 'Reduce file size while maintaining document integrity for efficient sharing.',
-        tag: 'OPTIMIZATION',
-        icon: <Cpu className="w-8 h-8 text-cyan-600" />,
-        version: 'v3.0',
-        href: '#'
-    },
-    {
-        id: 'svg-optimizer',
-        name: 'Graphics SDK',
-        description: 'Lossless vector optimization and geometric simplification for web assets.',
-        tag: 'VISUAL CONTENT',
-        icon: <Scissors className="w-8 h-8 text-pink-600" />,
-        version: 'v2.5',
-        href: '#'
-    },
-    {
-        id: 'word-to-pdf',
-        name: 'Conversion Lab',
-        description: 'Transform diverse document formats into professional, secure PDF assets.',
-        tag: 'CONVERSION',
-        icon: <ArrowUpRight className="w-8 h-8 text-purple-600" />,
-        version: 'v2.5',
-        href: '#'
+        href: '/tools/pdf-split'
     }
 ];
 

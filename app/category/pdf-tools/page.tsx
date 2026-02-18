@@ -34,38 +34,6 @@ const pdfTools = [
         tag: 'EXTRACTION',
         icon: <Scissors className="w-8 h-8 text-orange-600" />,
         version: 'v1.4'
-    },
-    {
-        id: 'pdf-compress',
-        name: 'Compress PDF',
-        description: 'Reduce file size while maintaining document quality for easy sharing.',
-        tag: 'OPTIMIZATION',
-        icon: <Minimize2 className="w-8 h-8 text-green-600" />,
-        version: 'v3.0'
-    },
-    {
-        id: 'pdf-to-word',
-        name: 'PDF to Word',
-        description: 'Convert PDF documents to editable Word files with high accuracy.',
-        tag: 'CONVERSION',
-        icon: <FileText className="w-8 h-8 text-purple-600" />,
-        version: 'v1.2'
-    },
-    {
-        id: 'word-to-pdf',
-        name: 'Word to PDF',
-        description: 'Transform Word documents into professional, secure PDF files.',
-        tag: 'CONVERSION',
-        icon: <FileType2 className="w-8 h-8 text-pink-600" />,
-        version: 'v2.5'
-    },
-    {
-        id: 'unlock-pdf',
-        name: 'Unlock PDF',
-        description: 'Remove passwords and security restrictions from PDF documents.',
-        tag: 'SECURITY',
-        icon: <Unlock className="w-8 h-8 text-red-600" />,
-        version: 'v1.1'
     }
 ];
 
@@ -151,7 +119,7 @@ export default function PdfToolsPage() {
 
                             <div className="pt-12 text-black">
                                 <Link
-                                    href={tool.id === 'pdf-merger' ? '/tools/pdf-merger' : `/tools/${tool.id}`}
+                                    href={tool.id === 'pdf-merger' || tool.id === 'pdf-split' ? `/tools/${tool.id}` : `/tools/${tool.id}`}
                                     className="flex items-center gap-4 group/btn"
                                 >
                                     <span className="text-xs font-bold uppercase tracking-widest border-b border-transparent group-hover/btn:border-black transition-all">
