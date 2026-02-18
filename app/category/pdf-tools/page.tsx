@@ -42,6 +42,14 @@ const pdfTools = [
         tag: 'OPTIMIZATION',
         icon: <Minimize2 className="w-8 h-8 text-violet-600 group-hover:text-white transition-colors duration-500" />,
         version: 'v1.0'
+    },
+    {
+        id: 'pdf-to-jpg',
+        name: 'PDF to JPG',
+        description: 'Convert every PDF page into a high-quality JPG image with instant preview and ZIP download.',
+        tag: 'CONVERSION',
+        icon: <ImageIcon className="w-8 h-8 text-amber-500 group-hover:text-white transition-colors duration-500" />,
+        version: 'v1.0'
     }
 ];
 

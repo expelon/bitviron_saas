@@ -16,7 +16,8 @@ import {
     Terminal,
     Cpu,
     FileText,
-    Minimize2
+    Minimize2,
+    Image as ImageIcon
 } from 'lucide-react';
 
 // Tool data mapped from internal constants but formatted for premium showcase
@@ -47,6 +48,15 @@ const tools = [
         icon: <Minimize2 className="w-8 h-8 text-violet-600 group-hover:text-white transition-colors duration-500" />,
         version: 'v1.0',
         href: '/tools/compress-pdf'
+    },
+    {
+        id: 'pdf-to-jpg',
+        name: 'PDF to JPG',
+        description: 'Convert every PDF page into a high-quality JPG image. Three quality presets, instant preview, ZIP download.',
+        tag: 'DOCUMENT CORE',
+        icon: <ImageIcon className="w-8 h-8 text-amber-500 group-hover:text-white transition-colors duration-500" />,
+        version: 'v1.0',
+        href: '/tools/pdf-to-jpg'
     }
 ];
 
