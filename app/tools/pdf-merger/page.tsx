@@ -313,7 +313,7 @@ export default function PdfMergePage() {
                             onDragEnter={handleDragEnter}
                             onDragLeave={handleDragLeave}
                             onDrop={onDrop}
-                            className={`border border-black rounded-none p-16 md:p-32 text-center group transition-all duration-500 cursor-pointer relative overflow-hidden ${isDragActive
+                            className={`border border-black rounded-none p-10 md:p-32 text-center group transition-all duration-500 cursor-pointer relative overflow-hidden ${isDragActive
                                 ? "bg-slate-50"
                                 : "bg-white hover:bg-slate-50"
                                 }`}
@@ -359,7 +359,7 @@ export default function PdfMergePage() {
                                     disabled={isProcessing}
                                     className="bg-black text-white text-[10px] font-bold uppercase tracking-[0.3em] py-5 px-10 rounded-full hover:scale-105 transition-all shadow-xl disabled:opacity-50 mt-4 group/btn flex items-center gap-3"
                                 >
-                                    {isProcessing ? "Processing..." : "Open Explorer"}
+                                    {isProcessing ? "Processing..." : "Upload Files"}
                                     {!isProcessing && <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />}
                                 </button>
                             </div>
@@ -515,9 +515,9 @@ export default function PdfMergePage() {
                             <Step num={2} text="Orchestrate" description="Reconfigure page order and prune unnecessary assets via the visual editor." />
                             <Step num={3} text="Execute & Export" description="Compile the final document and initiate bitstream download." />
                         </div>
-                        <div className="bg-slate-50 rounded-none p-12 border border-slate-200 flex items-center justify-center min-h-[500px] relative group overflow-hidden">
+                        <div className="bg-slate-50 rounded-none p-6 md:p-12 border border-slate-200 flex items-center justify-center min-h-[400px] md:min-h-[500px] relative group overflow-hidden">
                             <div className="absolute right-0 top-0 w-32 h-32 bg-black/5 blur-[80px] rounded-full -mr-16 -mt-16"></div>
-                            <div className="relative z-10">
+                            <div className="relative z-10 scale-[0.7] md:scale-100">
                                 <div className="w-56 h-72 bg-white border border-slate-200 rounded-none shadow-xl flex items-center justify-center transform -rotate-6 group-hover:-rotate-12 transition-all duration-700">
                                     <FileText className="w-12 h-12 text-slate-100" />
                                 </div>

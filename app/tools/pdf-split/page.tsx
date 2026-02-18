@@ -278,7 +278,7 @@ export default function PdfSplitPage() {
                                 setIsDragActive(false);
                                 if (e.dataTransfer.files?.[0]) processFile(e.dataTransfer.files[0]);
                             }}
-                            className={`border border-black rounded-none p-16 md:p-32 text-center group transition-all duration-500 cursor-pointer relative overflow-hidden ${isDragActive ? "bg-slate-50" : "bg-white hover:bg-slate-50"}`}
+                            className={`border border-black rounded-none p-10 md:p-32 text-center group transition-all duration-500 cursor-pointer relative overflow-hidden ${isDragActive ? "bg-slate-50" : "bg-white hover:bg-slate-50"}`}
                             onClick={() => fileInputRef.current?.click()}
                         >
                             <div className="absolute left-[-1px] top-0 w-[1px] h-0 bg-black group-hover:h-full transition-all duration-700 ease-in-out"></div>
@@ -304,6 +304,14 @@ export default function PdfSplitPage() {
                                         <span className="h-[1px] w-4 bg-slate-300"></span>
                                     </div>
                                 </div>
+
+                                <button
+                                    disabled={isProcessing}
+                                    className="bg-black text-white text-[10px] font-bold uppercase tracking-[0.3em] py-5 px-10 rounded-full hover:scale-105 transition-all shadow-xl disabled:opacity-50 mt-4 group/btn flex items-center gap-3"
+                                >
+                                    {isProcessing ? "Processing..." : "Upload File"}
+                                    {!isProcessing && <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />}
+                                </button>
                             </div>
                             {error && <div className="mt-6 p-4 bg-red-50 text-red-600 text-sm font-medium animate-fadeIn">{error}</div>}
                         </div>
@@ -445,9 +453,9 @@ export default function PdfSplitPage() {
                             <Step num={2} text="Segment Logic" description="Select specific pages or define range parameters for extraction." />
                             <Step num={3} text="Export Volumes" description="Execute the split process and download your new document segments." />
                         </div>
-                        <div className="bg-slate-50 rounded-none p-12 border border-slate-200 flex items-center justify-center min-h-[500px] relative group overflow-hidden">
+                        <div className="bg-slate-50 rounded-none p-6 md:p-12 border border-slate-200 flex items-center justify-center min-h-[400px] md:min-h-[500px] relative group overflow-hidden">
                             <div className="absolute right-0 top-0 w-32 h-32 bg-black/5 blur-[80px] rounded-full -mr-16 -mt-16"></div>
-                            <div className="relative z-10">
+                            <div className="relative z-10 scale-[0.7] md:scale-100">
                                 <div className="w-56 h-72 bg-white border border-slate-200 rounded-none shadow-xl flex items-center justify-center transform -rotate-6 group-hover:-rotate-12 transition-all duration-700">
                                     <div className="flex flex-col items-center gap-2">
                                         <FileText className="w-12 h-12 text-slate-100" />
