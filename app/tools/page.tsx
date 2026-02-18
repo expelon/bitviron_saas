@@ -25,7 +25,7 @@ const tools = [
         name: 'Merge PDF',
         description: 'Orchestrate multiple PDF data streams into a singular, unified document structure.',
         tag: 'DOCUMENT CORE',
-        icon: <FileText className="w-8 h-8 text-red-600" />,
+        icon: <FileText className="w-8 h-8 text-red-600 group-hover:text-white transition-colors duration-500" />,
         version: 'v4.4',
         href: '/tools/pdf-merger'
     },
@@ -34,7 +34,7 @@ const tools = [
         name: 'Split PDF',
         description: 'Extract specific pages or split documents into separate PDF files with precision.',
         tag: 'DOCUMENT CORE',
-        icon: <Scissors className="w-8 h-8 text-orange-600" />,
+        icon: <Scissors className="w-8 h-8 text-orange-600 group-hover:text-white transition-colors duration-500" />,
         version: 'v1.4',
         href: '/tools/pdf-split'
     }
@@ -96,8 +96,8 @@ export default function ToolsPage() {
 
                             <div className="space-y-8">
                                 <div className="flex justify-between items-start">
-                                    <div className="w-20 h-20 bg-slate-50 rounded-3xl flex items-center justify-center group-hover:bg-slate-200 group-hover:rotate-6 transition-all duration-500 shadow-sm border border-slate-100">
-                                        <div className="transition-colors duration-500">
+                                    <div className="w-20 h-20 bg-slate-50 rounded-3xl flex items-center justify-center group-hover:bg-black group-hover:rotate-6 transition-all duration-500 shadow-sm border border-slate-100">
+                                        <div className="transition-colors duration-500 group-hover:text-white">
                                             {product.icon}
                                         </div>
                                     </div>

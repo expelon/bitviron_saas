@@ -24,7 +24,7 @@ const pdfTools = [
         name: 'Merge PDF',
         description: 'Combine multiple PDF documents into a single, organized file.',
         tag: 'ORGANIZATION',
-        icon: <Files className="w-8 h-8 text-blue-600" />,
+        icon: <Files className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors duration-500" />,
         version: 'v2.1'
     },
     {
@@ -32,7 +32,7 @@ const pdfTools = [
         name: 'Split PDF',
         description: 'Extract specific pages or split documents into separate PDF files.',
         tag: 'EXTRACTION',
-        icon: <Scissors className="w-8 h-8 text-orange-600" />,
+        icon: <Scissors className="w-8 h-8 text-orange-600 group-hover:text-white transition-colors duration-500" />,
         version: 'v1.4'
     }
 ];
@@ -93,8 +93,8 @@ export default function PdfToolsPage() {
 
                             <div className="space-y-8">
                                 <div className="flex justify-between items-start">
-                                    <div className="w-20 h-20 bg-slate-50 rounded-3xl flex items-center justify-center group-hover:bg-slate-200 group-hover:rotate-6 transition-all duration-500 shadow-sm border border-slate-100">
-                                        <div className="transition-colors duration-500">
+                                    <div className="w-20 h-20 bg-slate-50 rounded-3xl flex items-center justify-center group-hover:bg-black group-hover:rotate-6 transition-all duration-500 shadow-sm border border-slate-100">
+                                        <div className="transition-colors duration-500 group-hover:text-white">
                                             {tool.icon}
                                         </div>
                                     </div>
