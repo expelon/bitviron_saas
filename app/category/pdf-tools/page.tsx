@@ -34,6 +34,14 @@ const pdfTools = [
         tag: 'EXTRACTION',
         icon: <Scissors className="w-8 h-8 text-orange-600 group-hover:text-white transition-colors duration-500" />,
         version: 'v1.4'
+    },
+    {
+        id: 'compress-pdf',
+        name: 'Compress PDF',
+        description: 'Reduce PDF file size with three precision compression presets.',
+        tag: 'OPTIMIZATION',
+        icon: <Minimize2 className="w-8 h-8 text-violet-600 group-hover:text-white transition-colors duration-500" />,
+        version: 'v1.0'
     }
 ];
 

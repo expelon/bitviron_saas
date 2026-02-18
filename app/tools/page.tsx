@@ -15,7 +15,8 @@ import {
     MousePointer2,
     Terminal,
     Cpu,
-    FileText
+    FileText,
+    Minimize2
 } from 'lucide-react';
 
 // Tool data mapped from internal constants but formatted for premium showcase
@@ -37,6 +38,15 @@ const tools = [
         icon: <Scissors className="w-8 h-8 text-orange-600 group-hover:text-white transition-colors duration-500" />,
         version: 'v1.4',
         href: '/tools/split-pdf'
+    },
+    {
+        id: 'compress-pdf',
+        name: 'Compress PDF',
+        description: 'Reduce PDF file size with surgical precision. Three compression presets for every use case.',
+        tag: 'DOCUMENT CORE',
+        icon: <Minimize2 className="w-8 h-8 text-violet-600 group-hover:text-white transition-colors duration-500" />,
+        version: 'v1.0',
+        href: '/tools/compress-pdf'
     }
 ];
 
