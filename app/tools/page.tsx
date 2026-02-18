@@ -17,7 +17,8 @@ import {
     Cpu,
     FileText,
     Minimize2,
-    Image as ImageIcon
+    Image as ImageIcon,
+    FileImage
 } from 'lucide-react';
 
 // Tool data mapped from internal constants but formatted for premium showcase
@@ -57,6 +58,15 @@ const tools = [
         icon: <ImageIcon className="w-8 h-8 text-amber-500 group-hover:text-white transition-colors duration-500" />,
         version: 'v1.0',
         href: '/tools/pdf-to-jpg'
+    },
+    {
+        id: 'jpg-to-pdf',
+        name: 'JPG to PDF',
+        description: 'Transform image collections into professional PDF documents. Original dimensions preserved.',
+        tag: 'DOCUMENT CORE',
+        icon: <FileImage className="w-8 h-8 text-rose-500 group-hover:text-white transition-colors duration-500" />,
+        version: 'v1.0',
+        href: '/tools/jpg-to-pdf'
     }
 ];
 

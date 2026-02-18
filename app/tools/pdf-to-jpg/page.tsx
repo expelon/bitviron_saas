@@ -221,7 +221,7 @@ export default function PdfToJpgPage() {
                     <div className="max-w-4xl mx-auto space-y-8">
 
                         {/* Quality Presets */}
-                        <div className="grid grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                             {(Object.entries(QUALITY_PRESETS) as [Quality, typeof QUALITY_PRESETS[Quality]][]).map(([key, preset]) => (
                                 <button
                                     key={key}
@@ -302,8 +302,8 @@ export default function PdfToJpgPage() {
                     <div className="animate-fadeIn">
 
                         {/* Results Toolbar */}
-                        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white p-5 md:p-8 border-b border-t border-black sticky top-16 md:top-24 z-30 mb-12">
-                            <div className="flex items-center gap-6 md:gap-10">
+                        <div className="flex flex-col xl:flex-row items-center justify-between gap-6 bg-white p-5 md:p-8 border-b border-t border-black sticky top-16 md:top-24 z-30 mb-12">
+                            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 w-full xl:w-auto">
                                 <div className="flex items-center gap-3 md:gap-4">
                                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black text-white flex items-center justify-center font-mono text-xs font-bold ring-4 ring-slate-100">
                                         {pages.length}
@@ -313,7 +313,7 @@ export default function PdfToJpgPage() {
                                         <span className="text-xs font-bold uppercase tracking-tighter">{QUALITY_PRESETS[quality].label}</span>
                                     </div>
                                 </div>
-                                <div className="h-8 w-[1px] bg-slate-200"></div>
+                                <div className="h-8 w-[1px] bg-slate-200 hidden md:block"></div>
                                 {/* Quality switcher inline */}
                                 <div className="flex items-center gap-2">
                                     <span className="text-[9px] font-mono uppercase text-slate-400 hidden md:block">Quality:</span>
@@ -326,7 +326,7 @@ export default function PdfToJpgPage() {
                                 </div>
                             </div>
 
-                            <div className="flex items-center gap-3">
+                            <div className="flex items-center gap-3 w-full sm:w-auto justify-center">
                                 <button onClick={reset} className="px-4 py-2.5 border border-slate-200 rounded-full text-[9px] font-bold uppercase tracking-widest font-mono hover:border-black transition-all text-slate-500 hover:text-black flex items-center gap-1.5">
                                     <RotateCcw className="w-3 h-3" /> New File
                                 </button>
