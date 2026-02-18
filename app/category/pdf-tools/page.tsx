@@ -20,7 +20,7 @@ import {
 // PDF Tool data
 const pdfTools = [
     {
-        id: 'pdf-merger',
+        id: 'merge-pdf',
         name: 'Merge PDF',
         description: 'Combine multiple PDF documents into a single, organized file.',
         tag: 'ORGANIZATION',
@@ -28,7 +28,7 @@ const pdfTools = [
         version: 'v2.1'
     },
     {
-        id: 'pdf-split',
+        id: 'split-pdf',
         name: 'Split PDF',
         description: 'Extract specific pages or split documents into separate PDF files.',
         tag: 'EXTRACTION',
@@ -119,7 +119,7 @@ export default function PdfToolsPage() {
 
                             <div className="pt-12 text-black">
                                 <Link
-                                    href={tool.id === 'pdf-merger' || tool.id === 'pdf-split' ? `/tools/${tool.id}` : `/tools/${tool.id}`}
+                                    href={`/tools/${tool.id}`}
                                     className="flex items-center gap-4 group/btn"
                                 >
                                     <span className="text-xs font-bold uppercase tracking-widest border-b border-transparent group-hover/btn:border-black transition-all">

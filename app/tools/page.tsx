@@ -21,22 +21,22 @@ import {
 // Tool data mapped from internal constants but formatted for premium showcase
 const tools = [
     {
-        id: 'pdf-merger',
+        id: 'merge-pdf',
         name: 'Merge PDF',
         description: 'Orchestrate multiple PDF data streams into a singular, unified document structure.',
         tag: 'DOCUMENT CORE',
         icon: <FileText className="w-8 h-8 text-red-600 group-hover:text-white transition-colors duration-500" />,
         version: 'v4.4',
-        href: '/tools/pdf-merger'
+        href: '/tools/merge-pdf'
     },
     {
-        id: 'pdf-split',
+        id: 'split-pdf',
         name: 'Split PDF',
         description: 'Extract specific pages or split documents into separate PDF files with precision.',
         tag: 'DOCUMENT CORE',
         icon: <Scissors className="w-8 h-8 text-orange-600 group-hover:text-white transition-colors duration-500" />,
         version: 'v1.4',
-        href: '/tools/pdf-split'
+        href: '/tools/split-pdf'
     }
 ];
 
