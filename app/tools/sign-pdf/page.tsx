@@ -42,9 +42,11 @@ const SIGNATURE_FONTS = [
 ];
 
 const SignaturePad: React.FC<SignaturePadProps> = ({ onSave, onCancel }) => {
-    const [activeTab, setActiveTab] = useState<'draw' | 'type'>('type');
+    const [activeTab, setActiveTab] = useState<'draw' | 'type' | 'import'>('type');
     const [typedText, setTypedText] = useState('');
     const [selectedFont, setSelectedFont] = useState(SIGNATURE_FONTS[0]);
+    const [importedImage, setImportedImage] = useState<string | null>(null);
+    const importInputRef = useRef<HTMLInputElement>(null);
 
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [isDrawing, setIsDrawing] = useState(false);
@@ -100,6 +102,29 @@ const SignaturePad: React.FC<SignaturePadProps> = ({ onSave, onCancel }) => {
         ctx.moveTo(x, y);
     };
 
+    const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            const img = new Image();
+            img.onload = () => {
+                // Convert any image to transparent PNG via canvas
+                const canvas = document.createElement('canvas');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                const ctx = canvas.getContext('2d');
+                if (ctx) {
+                    ctx.drawImage(img, 0, 0);
+                    setImportedImage(canvas.toDataURL('image/png'));
+                }
+            };
+            img.src = event.target?.result as string;
+        };
+        reader.readAsDataURL(file);
+    };
+
     const clear = () => {
         if (activeTab === 'draw') {
             const canvas = canvasRef.current;
@@ -107,8 +132,11 @@ const SignaturePad: React.FC<SignaturePadProps> = ({ onSave, onCancel }) => {
             const ctx = canvas.getContext('2d');
             if (!ctx) return;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-        } else {
+        } else if (activeTab === 'type') {
             setTypedText('');
+        } else {
+            setImportedImage(null);
+            if (importInputRef.current) importInputRef.current.value = '';
         }
     };
 
@@ -122,7 +150,7 @@ const SignaturePad: React.FC<SignaturePadProps> = ({ onSave, onCancel }) => {
             const isEmpty = !pixelData.some(channel => channel !== 0);
             if (isEmpty) return;
             onSave(canvas.toDataURL('image/png'));
-        } else {
+        } else if (activeTab === 'type') {
             if (!typedText.trim()) return;
 
             // Render text to a hidden canvas to get PNG
@@ -145,6 +173,9 @@ const SignaturePad: React.FC<SignaturePadProps> = ({ onSave, onCancel }) => {
             ctx.fillText(typedText, canvas.width / 2, canvas.height / 2);
 
             onSave(canvas.toDataURL('image/png'));
+        } else {
+            if (!importedImage) return;
+            onSave(importedImage);
         }
     };
 
@@ -162,18 +193,24 @@ const SignaturePad: React.FC<SignaturePadProps> = ({ onSave, onCancel }) => {
                 </div>
 
                 {/* Tabs */}
-                <div className="flex border-b border-slate-100 bg-slate-50/50 shrink-0">
+                <div className="flex border-b border-slate-200 bg-slate-50/50 shrink-0 overflow-x-auto">
                     <button
                         onClick={() => setActiveTab('type')}
-                        className={`flex-1 py-4 text-[10px] font-bold uppercase tracking-[0.2em] font-mono transition-all ${activeTab === 'type' ? 'bg-white border-b border-black text-black' : 'text-slate-400 hover:text-black'}`}
+                        className={`flex-1 min-w-[120px] py-4 text-[10px] font-bold uppercase tracking-[0.2em] font-mono transition-all ${activeTab === 'type' ? 'bg-white border-b border-black text-black' : 'text-slate-400 hover:text-black'}`}
                     >
-                        [ 01 ] Type Signature
+                        [ 01 ] Type
                     </button>
                     <button
                         onClick={() => setActiveTab('draw')}
-                        className={`flex-1 py-4 text-[10px] font-bold uppercase tracking-[0.2em] font-mono transition-all ${activeTab === 'draw' ? 'bg-white border-b border-black text-black' : 'text-slate-400 hover:text-black'}`}
+                        className={`flex-1 min-w-[120px] py-4 text-[10px] font-bold uppercase tracking-[0.2em] font-mono transition-all ${activeTab === 'draw' ? 'bg-white border-b border-black text-black' : 'text-slate-400 hover:text-black'}`}
                     >
-                        [ 02 ] Draw Signature
+                        [ 02 ] Draw
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('import')}
+                        className={`flex-1 min-w-[120px] py-4 text-[10px] font-bold uppercase tracking-[0.2em] font-mono transition-all ${activeTab === 'import' ? 'bg-white border-b border-black text-black' : 'text-slate-400 hover:text-black'}`}
+                    >
+                        [ 03 ] Import
                     </button>
                 </div>
 
@@ -192,7 +229,7 @@ const SignaturePad: React.FC<SignaturePadProps> = ({ onSave, onCancel }) => {
                             onTouchMove={draw}
                             onTouchEnd={stopDrawing}
                         />
-                    ) : (
+                    ) : activeTab === 'type' ? (
                         <div className="w-full space-y-8">
                             <div className="space-y-4">
                                 <label className="text-[10px] font-bold uppercase tracking-[0.3em] font-mono text-slate-400">Enter Name / Text</label>
@@ -201,7 +238,7 @@ const SignaturePad: React.FC<SignaturePadProps> = ({ onSave, onCancel }) => {
                                     value={typedText}
                                     onChange={(e) => setTypedText(e.target.value)}
                                     placeholder="Your Full Name"
-                                    className="w-full bg-white border border-black p-6 text-2xl font-medium focus:outline-none focus:ring-4 focus:ring-slate-100 transition-all placeholder:text-slate-200"
+                                    className="w-full bg-white border border-black p-4 md:p-6 text-xl md:text-2xl font-medium focus:outline-none focus:ring-4 focus:ring-slate-100 transition-all placeholder:text-slate-200"
                                 />
                             </div>
 
@@ -220,6 +257,40 @@ const SignaturePad: React.FC<SignaturePadProps> = ({ onSave, onCancel }) => {
                                     ))}
                                 </div>
                             </div>
+                        </div>
+                    ) : (
+                        <div className="w-full h-full flex flex-col items-center justify-center space-y-6">
+                            {!importedImage ? (
+                                <div
+                                    onClick={() => importInputRef.current?.click()}
+                                    className="w-full aspect-video border-2 border-dashed border-slate-200 flex flex-col items-center justify-center gap-4 cursor-pointer hover:border-black hover:bg-white transition-all group p-8"
+                                >
+                                    <CloudUpload className="w-10 h-10 text-slate-300 group-hover:text-black transition-colors" />
+                                    <div className="text-center">
+                                        <p className="text-[10px] font-bold uppercase tracking-widest">Select Signature Image</p>
+                                        <p className="text-[9px] font-mono text-slate-400 mt-2 uppercase">PNG or JPG with transparent/white background works best</p>
+                                    </div>
+                                    <input
+                                        type="file"
+                                        ref={importInputRef}
+                                        className="hidden"
+                                        accept="image/*"
+                                        onChange={handleImageUpload}
+                                    />
+                                </div>
+                            ) : (
+                                <div className="w-full relative group">
+                                    <div className="w-full aspect-video bg-white border border-black p-8 flex items-center justify-center">
+                                        <img src={importedImage} alt="Imported Signature" className="max-h-full max-w-full object-contain" />
+                                    </div>
+                                    <button
+                                        onClick={() => setImportedImage(null)}
+                                        className="absolute top-4 right-4 p-2 bg-black text-white hover:bg-red-600 transition-colors shadow-lg"
+                                    >
+                                        <Trash2 className="w-4 h-4" />
+                                    </button>
+                                </div>
+                            )}
                         </div>
                     )}
                 </div>
@@ -240,7 +311,10 @@ const SignaturePad: React.FC<SignaturePadProps> = ({ onSave, onCancel }) => {
                         </button>
                         <button
                             onClick={save}
-                            disabled={activeTab === 'type' && !typedText.trim()}
+                            disabled={
+                                (activeTab === 'type' && !typedText.trim()) ||
+                                (activeTab === 'import' && !importedImage)
+                            }
                             className="flex-1 sm:flex-none px-8 py-3 bg-black text-white text-[10px] font-bold uppercase tracking-[0.2em] font-mono hover:scale-105 transition-all shadow-xl disabled:opacity-50"
                         >
                             Confirm Signature
@@ -321,8 +395,10 @@ export default function SignPdfPage() {
 
         try {
             const buffer = await f.arrayBuffer();
+            // Store a copy for rendering/preview only
             const data = new Uint8Array(buffer);
-            setPdfData(data as any);
+
+            // Initialize PDF.js instance once
 
             // Initialize PDF.js instance once
             // @ts-ignore
@@ -346,22 +422,24 @@ export default function SignPdfPage() {
     };
 
     const signAndDownload = async () => {
-        if (!pdfData || !signature || !previewCanvasRef.current) return;
+        if (!file || !signature || !previewCanvasRef.current) return;
         setIsProcessing(true);
         setError(null);
 
         try {
-            const pdfDoc = await PDFDocument.load(pdfData);
+            // Read fresh buffer from file to avoid any detachment issues
+            const buffer = await file.arrayBuffer();
+            const pdfDoc = await PDFDocument.load(buffer);
             const signatureImage = await pdfDoc.embedPng(signature);
 
             const pages = pdfDoc.getPages();
             const page = pages[currentPage - 1];
             const { width, height } = page.getSize();
 
-            // Calculate scale between canvas and PDF coordinates
+            // Calculate scale between displayed canvas and PDF coordinates
             const canvas = previewCanvasRef.current;
-            const scaleX = width / canvas.width;
-            const scaleY = height / canvas.height;
+            const scaleX = width / canvas.clientWidth;
+            const scaleY = height / canvas.clientHeight;
 
             // pdf-lib uses bottom-left origin
             const finalX = sigPosition.x * scaleX;
