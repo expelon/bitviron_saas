@@ -17,7 +17,8 @@ import {
     Layers,
     FileImage,
     Signature,
-    ListFilter
+    ListFilter,
+    Trash2
 } from 'lucide-react';
 
 // PDF Tool data
@@ -76,6 +77,14 @@ const pdfTools = [
         description: 'Visually rearrange PDF pages with drag-and-drop orchestration.',
         tag: 'ORCHESTRATION',
         icon: <ListFilter className="w-8 h-8 text-emerald-600 group-hover:text-white transition-colors duration-500" />,
+        version: 'v1.0'
+    },
+    {
+        id: 'delete-pdf-pages',
+        name: 'Delete PDF Pages',
+        description: 'Remove unnecessary pages from your PDF documents with visual precision.',
+        tag: 'REDUCTION',
+        icon: <Trash2 className="w-8 h-8 text-red-500 group-hover:text-white transition-colors duration-500" />,
         version: 'v1.0'
     }
 ];

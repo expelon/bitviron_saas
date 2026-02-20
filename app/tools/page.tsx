@@ -20,7 +20,8 @@ import {
     Image as ImageIcon,
     FileImage,
     Signature,
-    ListFilter
+    ListFilter,
+    Trash2
 } from 'lucide-react';
 
 // Tool data mapped from internal constants but formatted for premium showcase
@@ -87,6 +88,15 @@ const tools = [
         icon: <ListFilter className="w-8 h-8 text-emerald-600 group-hover:text-white transition-colors duration-500" />,
         version: 'v1.0',
         href: '/tools/reorder-pdf'
+    },
+    {
+        id: 'delete-pdf-pages',
+        name: 'Delete PDF Pages',
+        description: 'Surgically remove pages from PDF data streams. High-performance reduction utility.',
+        tag: 'DOCUMENT CORE',
+        icon: <Trash2 className="w-8 h-8 text-red-500 group-hover:text-white transition-colors duration-500" />,
+        version: 'v1.0',
+        href: '/tools/delete-pdf-pages'
     }
 ];
 
