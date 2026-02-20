@@ -458,14 +458,14 @@ export default function SignPdfPage() {
                             <span className="w-8 md:w-12 h-[1px] bg-black"></span>
                             <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] font-mono">Precision Utilities // {new Date().getFullYear()}</span>
                         </div>
-                        <h1 className="text-5xl md:text-[8vw] font-bold leading-[0.85] tracking-tighter uppercase text-black">
+                        <h1 className="text-3xl sm:text-5xl md:text-[8vw] font-bold leading-[0.85] tracking-tight sm:tracking-tighter uppercase text-black">
                             PDF Signature<br />Console.
                         </h1>
                     </div>
 
                     <div className="col-span-12 lg:col-span-3 flex flex-col justify-end lg:items-end text-left lg:text-right mt-6 lg:mt-0">
                         <div className="max-w-xs space-y-6">
-                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] font-mono">
+                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest font-mono">
                                 [ System Status: Active ]<br />
                                 Cryptographic-grade signing module.
                             </p>
