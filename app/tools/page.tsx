@@ -19,7 +19,8 @@ import {
     Minimize2,
     Image as ImageIcon,
     FileImage,
-    Signature
+    Signature,
+    ListFilter
 } from 'lucide-react';
 
 // Tool data mapped from internal constants but formatted for premium showcase
@@ -77,6 +78,15 @@ const tools = [
         icon: <Signature className="w-8 h-8 text-black group-hover:text-white transition-colors duration-500" />,
         version: 'v1.0',
         href: '/tools/sign-pdf'
+    },
+    {
+        id: 'reorder-pdf',
+        name: 'Reorder PDF',
+        description: 'Orchestrate PDF page structures with absolute precision. Dynamic drag-and-drop sequencing.',
+        tag: 'DOCUMENT CORE',
+        icon: <ListFilter className="w-8 h-8 text-emerald-600 group-hover:text-white transition-colors duration-500" />,
+        version: 'v1.0',
+        href: '/tools/reorder-pdf'
     }
 ];
 

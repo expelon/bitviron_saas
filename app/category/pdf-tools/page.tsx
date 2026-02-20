@@ -16,7 +16,8 @@ import {
     Terminal,
     Layers,
     FileImage,
-    Signature
+    Signature,
+    ListFilter
 } from 'lucide-react';
 
 // PDF Tool data
@@ -67,6 +68,14 @@ const pdfTools = [
         description: 'Digitally sign PDF documents with custom signatures, text, and dates.',
         tag: 'SIGNATURE',
         icon: <Signature className="w-8 h-8 text-black group-hover:text-white transition-colors duration-500" />,
+        version: 'v1.0'
+    },
+    {
+        id: 'reorder-pdf',
+        name: 'Reorder PDF',
+        description: 'Visually rearrange PDF pages with drag-and-drop orchestration.',
+        tag: 'ORCHESTRATION',
+        icon: <ListFilter className="w-8 h-8 text-emerald-600 group-hover:text-white transition-colors duration-500" />,
         version: 'v1.0'
     }
 ];
