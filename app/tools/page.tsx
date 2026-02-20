@@ -18,7 +18,8 @@ import {
     FileText,
     Minimize2,
     Image as ImageIcon,
-    FileImage
+    FileImage,
+    Signature
 } from 'lucide-react';
 
 // Tool data mapped from internal constants but formatted for premium showcase
@@ -67,6 +68,15 @@ const tools = [
         icon: <FileImage className="w-8 h-8 text-rose-500 group-hover:text-white transition-colors duration-500" />,
         version: 'v1.0',
         href: '/tools/jpg-to-pdf'
+    },
+    {
+        id: 'sign-pdf',
+        name: 'Sign PDF',
+        description: 'Execute legally binding signatures with digital precision. Professional-grade signing console.',
+        tag: 'DOCUMENT CORE',
+        icon: <Signature className="w-8 h-8 text-black group-hover:text-white transition-colors duration-500" />,
+        version: 'v1.0',
+        href: '/tools/sign-pdf'
     }
 ];
 

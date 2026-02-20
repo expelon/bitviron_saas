@@ -15,7 +15,8 @@ import {
     Cpu,
     Terminal,
     Layers,
-    FileImage
+    FileImage,
+    Signature
 } from 'lucide-react';
 
 // PDF Tool data
@@ -58,6 +59,14 @@ const pdfTools = [
         description: 'Compile images into a PDF document. High-fidelity, drag-and-drop sequencing.',
         tag: 'CREATION',
         icon: <FileImage className="w-8 h-8 text-rose-500 group-hover:text-white transition-colors duration-500" />,
+        version: 'v1.0'
+    },
+    {
+        id: 'sign-pdf',
+        name: 'Sign PDF',
+        description: 'Digitally sign PDF documents with custom signatures, text, and dates.',
+        tag: 'SIGNATURE',
+        icon: <Signature className="w-8 h-8 text-black group-hover:text-white transition-colors duration-500" />,
         version: 'v1.0'
     }
 ];
